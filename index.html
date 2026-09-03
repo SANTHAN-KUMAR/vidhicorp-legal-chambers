@@ -119,27 +119,55 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero-photo" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager">
+    <div class="hero-media" aria-hidden="true">
+      <video class="hero-video-el is-active" data-slot="a" autoplay muted loop playsinline poster="images/hero-prevent-poster.jpg">
+        <source src="videos/hero-prevent.mp4" type="video/mp4">
+      </video>
+      <video class="hero-video-el" data-slot="b" muted loop playsinline></video>
+      <img class="poster-fallback" src="images/hero-prevent-poster.jpg" alt="">
     </div>
-    <div class="hero-glow" aria-hidden="true"><span></span><span></span><span></span></div>
 
     <div class="container hero-content">
       <p class="eyebrow">VidhiCorp Legal Chambers · Gurugram, India</p>
-      <h1 class="hero-title">
-        <span class="line"><span>Strategic legal partner</span></span>
-        <span class="line"><span>for growing <em>businesses</em>.</span></span>
-      </h1>
-      <p class="hero-sub">End-to-end legal, compliance, HR and POSH solutions. We partner with businesses as an extension of their management and legal functions — to prevent risk, protect interests, resolve disputes and enable growth.</p>
+      <h1 class="hero-title">Legal counsel built around your <em>business</em>.</h1>
+      <p class="hero-sub">Mitigate risks before disputes arise — with counsel who understand the commercial decision, not just the legal one.</p>
       <div class="hero-actions">
         <a href="contact.html" class="btn btn-primary">Request a Consultation</a>
         <a href="practice-areas.html" class="btn btn-ghost">View Practice Areas
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
+      <nav class="hero-quicklinks" aria-label="Quick links">
+        <span class="ql-label">Quick links</span>
+        <a class="pill-link" href="about.html">About<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="pill-link" href="practice-areas.html">Practice Areas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="pill-link" href="team.html">Team<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="pill-link" href="careers.html">Careers<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="pill-link" href="contact.html">Contact<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </nav>
     </div>
 
-    <div class="scroll-cue"><span>Scroll</span><span class="bar"></span></div>
+    <div class="hero-tabs" role="tablist" aria-label="Firm philosophy">
+      <button class="hero-tab is-active" role="tab" aria-selected="true"
+        data-video="videos/hero-prevent.mp4" data-poster="images/hero-prevent-poster.jpg"
+        data-headline="Legal counsel built around your &lt;em&gt;business&lt;/em&gt;."
+        data-sub="Mitigate risks before disputes arise — with counsel who understand the commercial decision, not just the legal one.">
+        <span class="tab-index">01</span><span class="tab-label">Prevent</span>
+      </button>
+      <button class="hero-tab" role="tab" aria-selected="false"
+        data-video="videos/hero-protect.mp4" data-poster="images/hero-protect-poster.jpg"
+        data-headline="An extension of your &lt;em&gt;legal team&lt;/em&gt;."
+        data-sub="We partner with businesses as an extension of their management and legal functions, to secure interests end to end.">
+        <span class="tab-index">02</span><span class="tab-label">Protect</span>
+      </button>
+      <button class="hero-tab" role="tab" aria-selected="false"
+        data-video="videos/hero-resolve.mp4" data-poster="images/hero-resolve-poster.jpg"
+        data-headline="Practical, business-oriented &lt;em&gt;resolution&lt;/em&gt;."
+        data-sub="Litigation, arbitration and negotiation — always weighed against what actually protects the business."
+        data-headline-plain="Practical, business-oriented resolution.">
+        <span class="tab-index">03</span><span class="tab-label">Resolve</span>
+      </button>
+    </div>
   </section>
 
   <section class="hero-strip bg-ink">
@@ -154,14 +182,17 @@
   <!-- ============ WHO WE ARE ============ -->
   <section class="section">
     <div class="container">
-      <div class="two-col">
-        <div class="reveal">
-          <p class="eyebrow">Who we are</p>
-          <h2>Providing strategic legal solutions across the entire business lifecycle.</h2>
-          <p class="mt-24" style="color:var(--text-muted);font-size:18px;line-height:1.7">Twenty years of multi-jurisdictional experience across Asia-Pacific, Europe and North America — combining legal expertise with commercial understanding to help businesses mitigate risk, remain compliant and grow.</p>
-          <a href="about.html" class="btn btn-outline mt-32">More About The Firm</a>
+      <div class="two-col" style="align-items:stretch">
+        <div class="reveal photo-panel" style="aspect-ratio:auto;min-height:520px">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1000&q=75&auto=format&fit=crop" alt="">
+          <div class="photo-caption">
+            <p class="eyebrow" style="color:var(--brass-300)">Who we are</p>
+            <p style="font-family:var(--font-display);font-size:22px;line-height:1.5;font-weight:400;color:var(--paper-50);max-width:26ch">Strategic legal solutions across the entire business lifecycle.</p>
+            <p class="mt-16" style="color:var(--ink-200);font-size:15px;line-height:1.7;max-width:38ch">Twenty years of multi-jurisdictional experience across Asia-Pacific, Europe and North America.</p>
+            <a href="about.html" class="btn btn-outline mt-24" style="border-color:rgba(247,242,232,.5);color:var(--paper-50)">More About The Firm</a>
+          </div>
         </div>
-        <div class="reveal-stagger" style="border-top:1px solid var(--border)">
+        <div class="reveal-stagger" style="border-top:1px solid var(--border);align-self:center">
           <div class="row-item" style="grid-template-columns:56px 1fr">
             <span class="row-num">01</span>
             <div><h4 style="font-size:17px">Prevent</h4><p class="mt-8">Mitigate risks before disputes arise.</p></div>
@@ -346,7 +377,7 @@
   <section class="cta-band grain">
     <div class="container">
       <p class="eyebrow" style="justify-content:center">Start a conversation</p>
-      <h2>Considering a matter that needs foresight, not firefighting?</h2>
+      <h2>Let's build with confidence — talk to the chambers.</h2>
       <div class="btn-row">
         <a href="contact.html" class="btn btn-primary">Request a Consultation</a>
         <a href="tel:+919810201992" class="btn btn-ghost">Call +91 98102 01992</a>
