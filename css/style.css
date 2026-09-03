@@ -186,13 +186,14 @@ section{position:relative}
   transition:background-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease),height var(--dur) var(--ease),backdrop-filter var(--dur) var(--ease);
 }
 .site-header.is-scrolled{
-  height:76px;background:rgba(16,21,31,.92);backdrop-filter:blur(10px) saturate(140%);
+  height:76px;background:rgba(5,11,26,.94);backdrop-filter:blur(10px) saturate(140%);
   box-shadow:0 1px 0 rgba(247,242,232,.08);
 }
 .site-header .container{display:flex;align-items:center;justify-content:space-between;gap:32px}
 
 .brand{display:flex;align-items:center;gap:12px;color:var(--paper-50)}
 .brand svg{width:40px;height:40px;flex:none}
+.brand-mark{width:44px;height:44px;flex:none;object-fit:contain;border-radius:6px}
 .brand-word{font-family:var(--font-display);font-weight:500;font-size:19px;letter-spacing:.02em;line-height:1.1}
 .brand-word b{font-weight:600}
 .brand-sub{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-300);margin-top:3px;font-weight:500}
@@ -220,7 +221,7 @@ section{position:relative}
   .nav-primary{display:none}
   .nav-toggle{display:flex}
   .site-header .container{justify-content:space-between}
-  .site-header.is-scrolled,.site-header{background:rgba(16,21,31,.96);backdrop-filter:blur(10px)}
+  .site-header.is-scrolled,.site-header{background:rgba(5,11,26,.96);backdrop-filter:blur(10px)}
 }
 
 /* mobile drawer */
@@ -283,7 +284,7 @@ section{position:relative}
 }
 .hero::after{
   content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(100deg,var(--ink-950) 32%,rgba(16,21,31,.7) 58%,rgba(16,21,31,.25) 100%);
+  background:linear-gradient(100deg,var(--ink-950) 32%,rgba(5,11,26,.7) 58%,rgba(5,11,26,.25) 100%);
 }
 .hero-content{position:relative;z-index:2;padding:120px 0 100px;max-width:920px}
 .hero-content .eyebrow{color:var(--brass-300)}
@@ -422,6 +423,18 @@ section{position:relative}
 }
 
 /* ==========================================================================
+   Pillar grid (Way of Working)
+   ========================================================================== */
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.pillar-col{background:var(--paper-0);padding:40px 36px}
+.pillar-index{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--brass-600)}
+.pillar-col h3{margin-top:14px;font-size:21px;font-weight:500;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.pillar-values{margin-top:20px;display:flex;flex-direction:column;gap:14px}
+.pillar-values li{font-size:15px;color:var(--text-muted);padding-left:18px;position:relative}
+.pillar-values li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+@media(max-width:900px){.pillar-grid{grid-template-columns:1fr}}
+
+/* ==========================================================================
    Approach / numbered rows
    ========================================================================== */
 .rows{border-top:1px solid var(--border)}
@@ -443,7 +456,7 @@ section{position:relative}
   display:flex;align-items:center;justify-content:center;
 }
 .team-photo .mono{
-  font-family:var(--font-display);font-size:64px;color:var(--brass-400);font-weight:400;opacity:.85;
+  font-family:var(--font-display);font-size:56px;letter-spacing:.04em;color:var(--brass-400);font-weight:400;opacity:.85;
 }
 .team-photo::after{content:"";position:absolute;inset:0;border:1px solid rgba(247,242,232,.12)}
 .team-photo::before{
