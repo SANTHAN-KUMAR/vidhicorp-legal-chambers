@@ -217,7 +217,7 @@
       btn.textContent = "Sending…";
       btn.disabled = true;
       setTimeout(function(){
-        status.textContent = "Thank you. Your enquiry has been received — a member of the chambers will respond within one business day.";
+        status.textContent = "Thank you. Your enquiry has been received, and a member of the chambers will respond within one business day.";
         status.className = "form-status is-success";
         form.reset();
         btn.textContent = originalLabel;
