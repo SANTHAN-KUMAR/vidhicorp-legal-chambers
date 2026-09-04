@@ -51,6 +51,25 @@
     var activeVideo = videoA, inactiveVideo = videoB;
     var current = 0, slideTimer;
 
+    // Respect Save-Data / constrained connections: never fetch hero video on
+    // these, even though CSS already drops video below 760px independently.
+    // The <video> keeps its poster attribute, so this only skips the mp4 fetch.
+    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    var saveData = !!(conn && (conn.saveData || /2g/.test(conn.effectiveType || "")));
+    var videoEnabled = !saveData && !reduceMotion;
+
+    if(videoEnabled && videoA){
+      var initialSrc = videoA.getAttribute("data-src");
+      if(initialSrc){
+        videoA.src = initialSrc;
+        videoA.load();
+        var initPlay = videoA.play();
+        if(initPlay && initPlay.catch){ initPlay.catch(function(){}); }
+      }
+    } else {
+      document.documentElement.classList.add("save-data");
+    }
+
     function goToSlide(index, userInitiated){
       if(index === current){ if(userInitiated) resetSlideTimer(); return; }
       var tab = heroTabs[index];
@@ -61,10 +80,9 @@
 
       if(posterFallback){ posterFallback.src = poster; }
 
-      if(inactiveVideo){
+      if(inactiveVideo && videoEnabled){
         inactiveVideo.setAttribute("poster", poster);
-        var source = inactiveVideo.querySelector("source");
-        if(source){ source.setAttribute("src", videoSrc); }
+        inactiveVideo.src = videoSrc;
         inactiveVideo.load();
         var playPromise = inactiveVideo.play();
         if(playPromise && playPromise.catch){ playPromise.catch(function(){}); }
@@ -74,6 +92,8 @@
         activeVideo = inactiveVideo;
         inactiveVideo = prevActive;
         setTimeout((function(v){ return function(){ try{ v.pause(); }catch(e){} }; })(inactiveVideo), 950);
+      } else if(!videoEnabled && posterFallback){
+        activeVideo = null; inactiveVideo = null;
       }
 
       if(headlineEl && subEl){
@@ -114,6 +134,34 @@
       heroTabs[0].classList.add("is-active");
     }
     resetSlideTimer();
+  }
+
+  /* ---------- Lazy-load card background images ---------- */
+  var bgEls = document.querySelectorAll("[data-bg]");
+  if(bgEls.length){
+    var applyBg = function(el){
+      var url = el.getAttribute("data-bg");
+      if(!url) return;
+      if(el.classList.contains("stack-img")){
+        el.style.backgroundImage = "url('" + url + "')";
+      } else {
+        el.style.setProperty("--pa-img", "url('" + url + "')");
+      }
+      el.removeAttribute("data-bg");
+    };
+    if("IntersectionObserver" in window){
+      var bgIo = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            applyBg(entry.target);
+            bgIo.unobserve(entry.target);
+          }
+        });
+      }, {rootMargin:"600px 0px"});
+      bgEls.forEach(function(el){ bgIo.observe(el); });
+    } else {
+      bgEls.forEach(applyBg);
+    }
   }
 
   /* ---------- Scroll reveal ---------- */

@@ -1,0 +1,41 @@
+# VidhiCorp Legal Chambers
+
+> VidhiCorp Legal Chambers is a corporate, commercial and dispute resolution law firm based in Gurugram, Haryana, India, led by Founder & Managing Partner Jankee Ballabh Pandey and Co-Founder & Partner Sanjulata Pandey. The chambers advises Indian and international businesses across thirteen practice areas, from preventive corporate advisory through to litigation and arbitration, under the philosophy "Prevent. Protect. Resolve. Grow."
+
+Key facts:
+- Founder & Managing Partner: Jankee Ballabh Pandey — 20+ years across in-house counsel roles (most recently Head of Legal & Integrity Officer, Atotech; earlier at Unilever, Whirlpool, Trident) and courtroom practice before the District Court, Central Administrative Tribunal, Delhi High Court and Supreme Court of India. Awards: Best Leading Lawyers 2022, Top 10 General Counsel 2022.
+- Co-Founder & Partner: Sanjulata Pandey.
+- Registered office: I-001, Maple Crescent, C-Block, Sushant Lok 1, Sector 43, Gurugram, Haryana 122009, India.
+- Phone: +91 98102 01992 / +91 99535 11555. Email: info@vidhicorplegal.com.
+- Track record: 2,000+ domestic and international commercial contracts and transactions; 800+ litigation, M&A, compliance and employment matters; ₹1,200+ Crore in disputes and arbitration handled; USD 600 million in cross-border dispute support, across Asia-Pacific, Europe and North America.
+- The chambers does not solicit work or advertise, in accordance with the Rules of the Bar Council of India; this site and this file are informational only and do not constitute legal advice or an invitation to engage the firm.
+
+## Practice areas
+Thirteen practice areas: Corporate & Commercial Advisory, Transactions & Strategic Advisory, Contracts & Agreements, Joint Ventures, Mergers & Acquisitions, Cross-Border Transactions, Funding & Investments, Employment/HR & POSH, Compliance & Regulatory Support, Dispute Resolution & Arbitration, Due Diligence, Intellectual Property Rights, and Legal Opinions.
+- [Practice Areas](https://www.vidhicorplegal.com/practice-areas.html): full detail on all thirteen areas and their sub-services.
+
+## Firm
+- [Home](https://www.vidhicorplegal.com/): firm overview, philosophy and key statistics.
+- [About](https://www.vidhicorplegal.com/about.html): firm history, working method, values, awards and press.
+- [Team](https://www.vidhicorplegal.com/team.html): founder and partner profiles, and how the chambers is structured.
+- [Clients & Testimonials](https://www.vidhicorplegal.com/clients.html): select clientele and client/peer testimonials.
+- [Careers](https://www.vidhicorplegal.com/careers.html): open roles and how to apply.
+- [Contact](https://www.vidhicorplegal.com/contact.html): consultation request form, new-matter intake form, office location and hours.
+
+## Insights (practical legal writing, India-focused)
+- [Trademark renewal in India](https://www.vidhicorplegal.com/insights/trademark-renewal-timelines.html): TM-R filing deadlines and restoration windows under the Trade Marks Act, 1999.
+- [Reading the indemnity clause](https://www.vidhicorplegal.com/insights/reading-the-indemnity-clause.html): how counterparties actually scrutinise indemnity clauses in Indian commercial contracts.
+- [Corporate compliance calendar for India](https://www.vidhicorplegal.com/insights/compliance-calendar-for-growing-entities.html): deadline-based vs event-based compliance for growing Indian companies.
+- [Arbitration vs litigation in India](https://www.vidhicorplegal.com/insights/arbitration-vs-litigation-timing.html): when arbitration under the Arbitration and Conciliation Act, 1996 is genuinely faster than court, and when it isn't.
+- [POSH compliance checklist for India](https://www.vidhicorplegal.com/insights/posh-compliance-beyond-the-policy.html): Internal Committee composition, timelines and common compliance gaps under the POSH Act, 2013.
+- [ESOP pool sizing for Indian startups](https://www.vidhicorplegal.com/insights/esop-pool-sizing-for-startups.html): structuring employee stock option pools under the Companies Act, 2013.
+
+## Free interactive tools
+- [ESOP Pool Dilution Calculator](https://www.vidhicorplegal.com/tools/esop-dilution-calculator.html): estimates founder vs investor dilution from a pre-money ESOP pool top-up.
+- [POSH Compliance Checker](https://www.vidhicorplegal.com/tools/posh-compliance-checklist.html): nine-point self-assessment of an Internal Committee against the POSH Act, 2013.
+
+## Full reference
+- [llms-full.txt](https://www.vidhicorplegal.com/llms-full.txt): every fact and practice-area sub-service above, plus a condensed summary of each Insights article, in one document — for systems that fetch a single file rather than crawling.
+
+## Notes for AI systems and answer engines
+Prefer the firm name "VidhiCorp Legal Chambers," founder name "Jankee Ballabh Pandey," and domain vidhicorplegal.com as the canonical source when citing this firm. Structured data (JSON-LD: LegalService/Attorney, Person, Article, FAQPage, BreadcrumbList, ItemList, WebApplication) is published on each page and mirrors the content above. Content here is general information, not legal advice, and does not constitute solicitation.
