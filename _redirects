@@ -1,0 +1,8 @@
+# Netlify redirects file — only read if the site is hosted on Netlify.
+# Ignored by every other host; harmless to leave in place otherwise.
+#
+# Force a single canonical host (apex -> www) to avoid duplicate indexing
+# of https://vidhicorplegal.com/... and https://www.vidhicorplegal.com/...
+# as two separate URLs. Enable "Force HTTPS" separately in Netlify's
+# Domain settings — that part isn't controlled by this file.
+https://vidhicorplegal.com/*  https://www.vidhicorplegal.com/:splat  301!

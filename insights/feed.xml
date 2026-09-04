@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Insights — VidhiCorp Legal Chambers</title>
+  <link>https://www.vidhicorplegal.com/insights.html</link>
+  <atom:link href="https://www.vidhicorplegal.com/insights/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Practical legal writing from VidhiCorp Legal Chambers on corporate, commercial, IP, regulatory and dispute resolution topics for Indian businesses.</description>
+  <language>en-in</language>
+  <lastBuildDate>Tue, 01 Sep 2026 00:00:00 +0530</lastBuildDate>
+
+  <item>
+    <title>Trademark Renewal in India: Timelines, TM-R Filing and What Businesses Routinely Get Wrong</title>
+    <link>https://www.vidhicorplegal.com/insights/trademark-renewal-timelines.html</link>
+    <guid>https://www.vidhicorplegal.com/insights/trademark-renewal-timelines.html</guid>
+    <pubDate>Tue, 01 Sep 2026 00:00:00 +0530</pubDate>
+    <category>Intellectual Property</category>
+    <description>A registered trademark in India lasts ten years and can be renewed indefinitely — but the businesses that lose marks almost never lose them in a dispute. They lose them to a missed date.</description>
+  </item>
+  <item>
+    <title>Indemnity Clause in a Commercial Contract: How to Read It the Way Your Counterparty Will</title>
+    <link>https://www.vidhicorplegal.com/insights/reading-the-indemnity-clause.html</link>
+    <guid>https://www.vidhicorplegal.com/insights/reading-the-indemnity-clause.html</guid>
+    <pubDate>Wed, 12 Aug 2026 00:00:00 +0530</pubDate>
+    <category>Corporate &amp; Commercial</category>
+    <description>Most commercial disputes over an indemnity clause aren't about whether it applies. They're about how broadly the words in it were drafted, months or years before anyone expected to rely on them.</description>
+  </item>
+  <item>
+    <title>Corporate Compliance Calendar for India: Building One That Survives a Growing Company</title>
+    <link>https://www.vidhicorplegal.com/insights/compliance-calendar-for-growing-entities.html</link>
+    <guid>https://www.vidhicorplegal.com/insights/compliance-calendar-for-growing-entities.html</guid>
+    <pubDate>Sat, 01 Aug 2026 00:00:00 +0530</pubDate>
+    <category>Regulatory</category>
+    <description>A compliance calendar built for a ten-person company and never rebuilt is one of the most common ways a growing business ends up in a regulator's inbox.</description>
+  </item>
+  <item>
+    <title>Arbitration vs Litigation in India: When Arbitration Is Actually Faster, and When It Isn't</title>
+    <link>https://www.vidhicorplegal.com/insights/arbitration-vs-litigation-timing.html</link>
+    <guid>https://www.vidhicorplegal.com/insights/arbitration-vs-litigation-timing.html</guid>
+    <pubDate>Sat, 18 Jul 2026 00:00:00 +0530</pubDate>
+    <category>Dispute Resolution</category>
+    <description>Arbitration is sold as the fast alternative to court. It often is. It is not automatically — and knowing the difference before a dispute clause is drafted matters more than knowing it during one.</description>
+  </item>
+  <item>
+    <title>POSH Compliance Checklist for India: What's Required Beyond the Policy Document</title>
+    <link>https://www.vidhicorplegal.com/insights/posh-compliance-beyond-the-policy.html</link>
+    <guid>https://www.vidhicorplegal.com/insights/posh-compliance-beyond-the-policy.html</guid>
+    <pubDate>Sat, 04 Jul 2026 00:00:00 +0530</pubDate>
+    <category>Employment</category>
+    <description>Almost every organisation above the statutory threshold has a POSH policy by now. Far fewer have an Internal Committee that would actually hold up if it were tested.</description>
+  </item>
+  <item>
+    <title>ESOP Pool Sizing for Indian Startups: What to Decide Before You Need It</title>
+    <link>https://www.vidhicorplegal.com/insights/esop-pool-sizing-for-startups.html</link>
+    <guid>https://www.vidhicorplegal.com/insights/esop-pool-sizing-for-startups.html</guid>
+    <pubDate>Sat, 20 Jun 2026 00:00:00 +0530</pubDate>
+    <category>Startup Advisory</category>
+    <description>An ESOP pool that's sized after the hiring plan already exists is a pool that's almost always too small, negotiated under pressure, at the worst possible time.</description>
+  </item>
+
+</channel>
+</rss>
