@@ -195,9 +195,9 @@
     resetTimer();
   }
 
-  /* ---------- Contact form (front-end only) ---------- */
-  var form = document.querySelector("#enquiry-form");
-  if(form){
+  /* ---------- AJAX forms (Formspree) ---------- */
+  var ajaxForms = document.querySelectorAll("form[data-ajax]");
+  ajaxForms.forEach(function(form){
     form.addEventListener("submit", function(e){
       e.preventDefault();
       var status = form.querySelector(".form-status");
@@ -208,7 +208,7 @@
         else { field.style.borderColor = ""; }
       });
       if(!valid){
-        status.textContent = "Please complete the required fields before sending your enquiry.";
+        status.textContent = "Please complete the required fields before sending.";
         status.className = "form-status is-error";
         return;
       }
@@ -216,15 +216,28 @@
       var originalLabel = btn.textContent;
       btn.textContent = "Sending…";
       btn.disabled = true;
-      setTimeout(function(){
-        status.textContent = "Thank you. Your enquiry has been received, and a member of the chambers will respond within one business day.";
-        status.className = "form-status is-success";
-        form.reset();
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      }).then(function(res){
+        if(res.ok){
+          status.textContent = form.dataset.successMessage || "Thank you. Your message has been received.";
+          status.className = "form-status is-success";
+          form.reset();
+        } else {
+          status.textContent = "Something went wrong sending that. Please email us directly at info@vidhicorplegal.com.";
+          status.className = "form-status is-error";
+        }
+      }).catch(function(){
+        status.textContent = "Something went wrong sending that. Please email us directly at info@vidhicorplegal.com.";
+        status.className = "form-status is-error";
+      }).finally(function(){
         btn.textContent = originalLabel;
         btn.disabled = false;
-      }, 900);
+      });
     });
-  }
+  });
 
   /* ---------- Entry disclaimer (Bar Council of India Rule 36) ---------- */
   var modal = document.querySelector(".disclaimer-modal");

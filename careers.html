@@ -111,13 +111,47 @@
     </div>
   </section>
 
-  <section class="cta-band grain">
-    <div class="container">
-      <p class="eyebrow" style="justify-content:center">Interested?</p>
-      <h2>Write in with a short note about your background and the kind of work you're looking for.</h2>
-      <div class="btn-row">
-        <a href="mailto:info@vidhicorplegal.com" class="btn btn-primary">Email info@vidhicorplegal.com</a>
+  <section class="section bg-alt">
+    <div class="container" style="max-width:760px">
+      <div class="sec-head reveal" style="display:block">
+        <p class="eyebrow">Interested?</p>
+        <h2>Write in with a short note about your background and the kind of work you're looking for.</h2>
       </div>
+      <form id="careers-form" class="reveal" novalidate action="https://formspree.io/f/xgaezkod" method="POST" data-ajax data-success-message="Thank you. Your note has been received, and a member of the chambers will be in touch if there's a fit.">
+        <input type="hidden" name="_subject" value="New careers enquiry — VidhiCorp website">
+        <div class="form-grid">
+          <div class="field">
+            <label for="c-name">Full name *</label>
+            <input type="text" id="c-name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="c-email">Email address *</label>
+            <input type="email" id="c-email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="c-phone">Phone number</label>
+            <input type="tel" id="c-phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="c-role">Role you're interested in</label>
+            <select id="c-role" name="role">
+              <option value="">Select the closest fit (optional)</option>
+              <option>Associate</option>
+              <option>Senior Associate</option>
+              <option>Partner</option>
+              <option>Consultant</option>
+              <option>Other / not sure yet</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="c-message">A short note about your background *</label>
+            <textarea id="c-message" name="message" required placeholder="Your experience, current role, and the kind of work you're looking for."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-24">Send Note</button>
+        <div class="form-status" role="status" aria-live="polite"></div>
+      </form>
+      <p class="mt-24" style="font-size:13.5px;color:var(--text-muted);text-align:center">Prefer email? Write to <a href="mailto:info@vidhicorplegal.com" style="color:var(--accent-strong)">info@vidhicorplegal.com</a> directly.</p>
     </div>
   </section>
 
