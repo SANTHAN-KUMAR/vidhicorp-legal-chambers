@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: "Legal Updates | Business Law Insights & Updates — VidhiCorp Legal Chambers"
+description: "Short, timely updates on new judgments, legislation and regulatory developments relevant to Indian businesses, from VidhiCorp Legal Chambers."
+permalink: /legal-updates/
+eleventyExcludeFromCollections: true
+---
+<section class="page-hero has-photo grain">
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1631972756622-b2d9164c0e53?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; Legal Updates</p>
+    <h1>Legal Updates</h1>
+    <p>Short, timely notes on new judgments, legislation, regulatory developments and notifications relevant to Indian businesses — distinct from our longer-form Legal Insights.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    {% if collections.legalUpdates.length %}
+    <div class="insight-grid reveal">
+      {% for update in collections.legalUpdates %}
+      <a class="insight-card" href="{{ update.url }}">
+        <div class="insight-img"><img src="{{ update.data.image }}" alt="{{ update.data.title }}" loading="lazy"><span class="insight-tag">{{ update.data.tag }}</span></div>
+        <div class="insight-body">
+          <h3>{{ update.data.title }}</h3>
+          <div class="meta"><span>{{ update.data.date | dateDisplay }}</span></div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="reveal" style="max-width:560px;margin:0 auto;text-align:center;padding:60px 0">
+      <p class="eyebrow" style="justify-content:center">Coming soon</p>
+      <h2>New Legal Updates are added regularly.</h2>
+      <p class="mt-16" style="color:var(--text-muted);font-size:16px;line-height:1.7">Check back soon, or subscribe below to be notified when we publish new judgments, legislation and regulatory notes relevant to your business.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% include "newsletter.njk" %}

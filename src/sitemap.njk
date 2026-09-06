@@ -1,0 +1,27 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ site.domain }}/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>{{ site.domain }}/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>{{ site.domain }}/practice-areas/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>{{ site.domain }}/team/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>{{ site.domain }}/clients/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>{{ site.domain }}/careers/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>{{ site.domain }}/legal-insights/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>{{ site.domain }}/legal-updates/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>{{ site.domain }}/resources/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>{{ site.domain }}/tools/esop-dilution-calculator/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>{{ site.domain }}/tools/posh-compliance-checklist/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>{{ site.domain }}/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>{{ site.domain }}/privacy-policy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>{{ site.domain }}/terms-of-use/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>{{ site.domain }}/disclaimer/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+{% for article in collections.legalInsights %}
+  <url><loc>{{ site.domain }}{{ article.url }}</loc><lastmod>{{ article.data.date }}</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+{% endfor %}
+{% for update in collections.legalUpdates %}
+  <url><loc>{{ site.domain }}{{ update.url }}</loc><lastmod>{{ update.data.date }}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+{% endfor %}
+</urlset>

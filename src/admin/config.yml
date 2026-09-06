@@ -1,0 +1,233 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media uploaded through the CMS goes here and is served at /images/uploads/...
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  # ---------- Legal Insights (long-form articles) ----------
+  - name: "legal-insights"
+    label: "Legal Insights"
+    folder: "src/legal-insights"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "article.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tag / Category", name: "tag", widget: "select", options: ["Intellectual Property", "Corporate & Commercial", "Regulatory", "Dispute Resolution", "Employment", "Startup Advisory", "Real Estate", "Private Client"] }
+      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Read time", name: "readTime", widget: "string", default: "6 min read" }
+      - { label: "Cover image", name: "image", widget: "image", required: false, hint: "Or paste an external image URL below instead" }
+      - { label: "Cover image URL (if not uploading)", name: "image", widget: "string", required: false }
+      - { label: "Permalink (leave as-is unless you know why you're changing it)", name: "permalink", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ---------- Legal Updates (short, timely notes) ----------
+  - name: "legal-updates"
+    label: "Legal Updates"
+    folder: "src/legal-updates"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "article.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tag / Category", name: "tag", widget: "select", options: ["Judgment", "Legislation", "Regulatory Notification", "Circular", "Other"] }
+      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Read time", name: "readTime", widget: "string", default: "2 min read" }
+      - { label: "Cover image URL", name: "image", widget: "string" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ---------- Single data files (site-wide structured content) ----------
+  - name: "data"
+    label: "Site Content"
+    files:
+      - name: "team"
+        label: "Team"
+        file: "src/_data/team.json"
+        fields:
+          - label: "Founder"
+            name: "founder"
+            widget: "object"
+            fields:
+              - { label: "Full name", name: "name", widget: "string" }
+              - { label: "Display name (with Mr./Ms.)", name: "displayName", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Portrait path", name: "portrait", widget: "string" }
+              - { label: "Short bio (used on Team page top)", name: "shortBio", widget: "text" }
+              - { label: "Full bio (used on About page)", name: "aboutBio", widget: "text" }
+              - { label: "Education", name: "education", widget: "list" }
+              - { label: "Courts & tribunals", name: "courts", widget: "list" }
+              - { label: "Awards", name: "awards", widget: "list" }
+              - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - label: "Co-Founder"
+            name: "coFounder"
+            widget: "object"
+            fields:
+              - { label: "Full name", name: "name", widget: "string" }
+              - { label: "Display name (with Mr./Ms.)", name: "displayName", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Portrait path", name: "portrait", widget: "string" }
+              - { label: "Bio", name: "aboutBio", widget: "text" }
+          - label: "Chambers structure (tiers)"
+            name: "structure"
+            widget: "list"
+            fields:
+              - { label: "Tier name", name: "tier", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Background image URL", name: "image", widget: "string" }
+
+      - name: "site"
+        label: "Site Settings (contact, social, navigation)"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Firm name", name: "name", widget: "string" }
+          - { label: "Domain (no trailing slash)", name: "domain", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "GA4 Measurement ID", name: "ga4Id", widget: "string" }
+          - label: "Phone numbers"
+            name: "phones"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Display number", name: "number", widget: "string" }
+              - { label: "Href (digits only, e.g. +919810201992)", name: "href", widget: "string" }
+              - { label: "Is WhatsApp number?", name: "whatsapp", widget: "boolean", default: false }
+          - { label: "Email addresses", name: "emails", widget: "list" }
+          - { label: "Primary email (used in most CTAs)", name: "primaryEmail", widget: "string" }
+          - { label: "Office hours text", name: "officeHours", widget: "string" }
+          - label: "Social links"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "WhatsApp (wa.me link)", name: "whatsapp", widget: "string", required: false }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "X / Twitter", name: "twitter", widget: "string", required: false }
+          - label: "Main navigation"
+            name: "nav"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Footer 'Firm' column links"
+            name: "footerFirmLinks"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Footer legal links"
+            name: "legalLinks"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+
+      - name: "offices"
+        label: "Offices / Locations"
+        file: "src/_data/offices.json"
+        fields:
+          - label: "Offices"
+            name: "offices"
+            widget: "list"
+            allow_add: true
+            fields:
+              - { label: "Office name (e.g. 'Mumbai')", name: "name", widget: "string" }
+              - { label: "Is head office?", name: "isHeadOffice", widget: "boolean", default: false }
+              - { label: "Address lines", name: "addressLines", widget: "list" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "State/Region", name: "region", widget: "string" }
+              - { label: "Postal code", name: "postalCode", widget: "string" }
+              - { label: "Country code", name: "country", widget: "string", default: "IN" }
+              - { label: "Google Maps search query", name: "mapQuery", widget: "string" }
+              - label: "Coordinates (optional, for map/schema precision)"
+                name: "geo"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "Latitude", name: "latitude", widget: "number", value_type: "float" }
+                  - { label: "Longitude", name: "longitude", widget: "number", value_type: "float" }
+
+      - name: "clients"
+        label: "Clients"
+        file: "src/_data/clients.json"
+        fields:
+          - label: "Clients"
+            name: "clients"
+            widget: "list"
+            fields:
+              - { label: "Client name", name: "name", widget: "string" }
+              - { label: "Sector", name: "sector", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Logo image", name: "logo", widget: "image", required: false }
+
+      - name: "testimonials"
+        label: "Testimonials"
+        file: "src/_data/testimonials.json"
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Designation", name: "designation", widget: "string", required: false }
+
+      - name: "careers"
+        label: "Careers / Openings"
+        file: "src/_data/careers.json"
+        fields:
+          - label: "Openings"
+            name: "careers"
+            widget: "list"
+            fields:
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Type", name: "type", widget: "string" }
+              - { label: "Status", name: "status", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+      - name: "tools"
+        label: "Free Tools / Resources"
+        file: "src/_data/tools.json"
+        fields:
+          - label: "Tools"
+            name: "tools"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "URL (path on this site)", name: "url", widget: "string" }
+              - { label: "Card image URL", name: "image", widget: "string" }
+              - { label: "Icon SVG (advanced — leave as-is unless comfortable with SVG)", name: "iconSvg", widget: "text" }
+
+      - name: "practiceAreas"
+        label: "Practice Areas"
+        file: "src/_data/practiceAreas.json"
+        fields:
+          - label: "Practice areas"
+            name: "practiceAreas"
+            widget: "list"
+            fields:
+              - { label: "ID (used in URLs — don't change without checking links)", name: "id", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Short description (card)", name: "shortDesc", widget: "text" }
+              - { label: "Detail description (full page)", name: "detail", widget: "text" }
+              - { label: "Card image URL", name: "image", widget: "string" }
+              - { label: "Related Legal Insight slug (optional)", name: "relatedInsight", widget: "string", required: false }
+              - { label: "Icon SVG (advanced)", name: "iconSvg", widget: "text" }
+
+      - name: "sectors"
+        label: "Sectors We Advise"
+        file: "src/_data/sectors.json"
+        fields:
+          - { label: "Sectors", name: "sectors", widget: "list" }

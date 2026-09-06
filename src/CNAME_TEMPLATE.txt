@@ -1,0 +1,13 @@
+This is NOT an active CNAME file — it's a placeholder note.
+
+When ready to point www.vidhicorplegal.com at GitHub Pages:
+1. Create a file named exactly "CNAME" (no extension) at the repo root (or in src/, so
+   it's copied to _site/CNAME during build) containing exactly: www.vidhicorplegal.com
+2. Add the corresponding DNS records at your domain registrar (a CNAME record for
+   "www" pointing to santhan-kumar.github.io, plus the standard GitHub Pages A/ALIAS
+   records for the apex domain if you also want vidhicorplegal.com without "www" to work).
+3. In the repo's Settings -> Pages, enter the custom domain and enable "Enforce HTTPS"
+   once DNS has propagated.
+
+Do this only when DNS is actually ready — adding a live CNAME file before that can
+break the current *.github.io URL.

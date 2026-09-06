@@ -1,0 +1,47 @@
+{
+  "name": "VidhiCorp Legal Chambers",
+  "domain": "https://www.vidhicorplegal.com",
+  "tagline": "Legal counsel built around your business.",
+  "ga4Id": "G-042SH70J3P",
+  "phones": [
+    { "label": "Primary (WhatsApp)", "number": "+91 98102 01992", "href": "+919810201992", "whatsapp": true },
+    { "label": "Secondary", "number": "+91 99535 11555", "href": "+919953511555", "whatsapp": false },
+    { "label": "Additional", "number": "+91 83683 39487", "href": "+918368339487", "whatsapp": false }
+  ],
+  "emails": ["jankee@vidhicorplegal.com", "info@vidhicorplegal.com"],
+  "primaryEmail": "info@vidhicorplegal.com",
+  "officeHours": "Monday to Saturday, 9:30 AM–6:30 PM IST",
+  "social": {
+    "linkedin": "https://in.linkedin.com/in/jankeeballabhpandey",
+    "whatsapp": "https://wa.me/919810201992",
+    "facebook": "",
+    "instagram": "",
+    "twitter": ""
+  },
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "About", "url": "/about/" },
+    { "label": "Practice Areas", "url": "/practice-areas/" },
+    { "label": "Team", "url": "/team/" },
+    { "label": "Clients", "url": "/clients/" },
+    { "label": "Careers", "url": "/careers/" },
+    { "label": "Legal Insights", "url": "/legal-insights/" },
+    { "label": "Legal Updates", "url": "/legal-updates/" },
+    { "label": "Contact", "url": "/contact/" }
+  ],
+  "footerFirmLinks": [
+    { "label": "About Us", "url": "/about/" },
+    { "label": "Our Team", "url": "/team/" },
+    { "label": "Clients", "url": "/clients/" },
+    { "label": "Practice Areas", "url": "/practice-areas/" },
+    { "label": "Careers", "url": "/careers/" },
+    { "label": "Legal Insights", "url": "/legal-insights/" },
+    { "label": "Legal Updates", "url": "/legal-updates/" },
+    { "label": "Resources", "url": "/resources/" }
+  ],
+  "legalLinks": [
+    { "label": "Privacy Policy", "url": "/privacy-policy/" },
+    { "label": "Terms of Use", "url": "/terms-of-use/" },
+    { "label": "Disclaimer", "url": "/disclaimer/" }
+  ]
+}

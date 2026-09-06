@@ -1,0 +1,89 @@
+---
+layout: base.njk
+title: "Practice Areas | Corporate Law, Contracts, IP & Dispute Resolution in India"
+description: "VidhiCorp Legal Chambers' 15 practice areas spanning corporate & commercial law, M&A, contracts, IP, dispute resolution, compliance, real estate and private client matters for businesses across India."
+permalink: /practice-areas/
+---
+<section class="page-hero has-photo grain">
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; Practice Areas</p>
+    <h1>Practice areas</h1>
+    <p>{{ practiceAreas.length }} areas of focused practice in Indian business law, organised the way problems actually arrive at our desk: rarely as a single, isolated question. Each is led by counsel with direct transactional or courtroom experience.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow reveal" style="justify-content:flex-start">Tap or hover any area for detail</p>
+    <div class="pa-grid reveal">
+      {% for pa in practiceAreas %}
+      <div class="pa-card{% if pa.wide %} pa-card-wide{% endif %}" id="{{ pa.id }}" data-bg="{{ pa.image }}">
+        <span class="pa-card-img" aria-hidden="true"></span><span class="pa-card-scrim" aria-hidden="true"></span>
+        <div class="pa-card-body">
+          <svg class="pa-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">{{ pa.iconSvg | safe }}</svg>
+          {% if pa.wide %}<div class="pa-card-text">{% endif %}
+          <h3>{{ pa.name }}</h3>
+          <div class="pa-card-more"><p>{{ pa.shortDesc }}</p></div>
+          {% if pa.wide %}</div>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Practice areas in detail</p>
+        <h2>What each area actually covers.</h2>
+        <p>A closer look at the matters and sub-services within each of the {{ practiceAreas.length }} practice areas.</p>
+      </div>
+    </div>
+    <div class="rows reveal-stagger">
+      {% for pa in practiceAreas %}
+      <div class="row-item" style="grid-template-columns:260px 1fr{% if loop.last %};border-bottom:1px solid var(--border){% endif %}">
+        <h4 style="font-size:18px">{{ pa.name }}</h4>
+        <div>
+          <p>{{ pa.detail }}</p>
+          {% if pa.relatedInsight %}
+          {% for article in collections.legalInsights %}{% if article.fileSlug == pa.relatedInsight %}
+          <a href="{{ article.url }}" style="font-size:12.5px;font-weight:600;color:var(--accent-strong);display:inline-block;margin-top:10px">Related reading: {{ article.data.title }} &rarr;</a>
+          {% endif %}{% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Who we advise</p>
+        <h2>Sectors we understand.</h2>
+        <p>Practice areas describe what we do. The sectors below describe the businesses and industries we understand — often as important to a good outcome as the law itself.</p>
+      </div>
+    </div>
+    <div class="sector-strip reveal">
+      {% for s in sectors %}<span class="sector-chip">{{ s }}</span>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Not sure where your matter fits?</p>
+        <h2>Most engagements touch more than one area.</h2>
+        <p>Tell us what's in front of you. We'll route it to the right counsel within the chambers.</p>
+      </div>
+      <a href="/contact/" class="btn btn-primary sec-link">Describe Your Matter</a>
+    </div>
+  </div>
+</section>

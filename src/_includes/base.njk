@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }}{% if title %} | {% endif %}VidhiCorp Legal Chambers</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ site.domain }}{{ canonicalPath or page.url }}">
+<!-- Open Graph -->
+<meta property="og:type" content="{{ ogType or 'website' }}">
+<meta property="og:site_name" content="VidhiCorp Legal Chambers">
+<meta property="og:title" content="{{ title }}{% if title %} | {% endif %}VidhiCorp Legal Chambers">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ site.domain }}{{ canonicalPath or page.url }}">
+<meta property="og:image" content="{{ ogImage or (site.domain + '/images/og-image.jpg') }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }}{% if title %} | {% endif %}VidhiCorp Legal Chambers">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="{{ ogImage or (site.domain + '/images/og-image.jpg') }}">
+
+<link rel="icon" href="/images/favicon.png" type="image/png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#00041E">
+<meta name="robots" content="{{ robotsMeta or 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="VidhiCorp Legal Chambers — Legal Insights" href="/legal-insights/feed.xml">
+<link rel="stylesheet" href="/css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4Id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.ga4Id }}');
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+      a.addEventListener('click', function(){ gtag('event', 'click_to_email', {event_category: 'contact'}); });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){ gtag('event', 'click_to_call', {event_category: 'contact'}); });
+    });
+  });
+</script>
+<!-- <meta name="google-site-verification" content="REPLACE_WITH_SEARCH_CONSOLE_TOKEN"> -->
+<script type="application/ld+json">
+{{ organizationSchema | dump | safe }}
+</script>
+{% if schema %}
+<script type="application/ld+json">
+{{ schema | dump | safe }}
+</script>
+{% endif %}
+{% if breadcrumbSchemaOverride %}
+<script type="application/ld+json">
+{{ breadcrumbSchemaOverride | dump | safe }}
+</script>
+{% elif breadcrumbSchema %}
+<script type="application/ld+json">
+{{ breadcrumbSchema | dump | safe }}
+</script>
+{% endif %}
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="/images/logo-crest.png" alt="VidhiCorp Legal Chambers crest" class="brand-mark">
+      <span><span class="brand-word">Vidhi<b>Corp</b></span><span class="brand-sub">Legal Chambers</span></span>
+    </a>
+    <nav class="nav-primary" aria-label="Primary">
+      <div class="nav-links">
+        {% for item in site.nav %}
+        <a href="{{ item.url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.label }}</a>
+        {% endfor %}
+      </div>
+      <div class="nav-actions">
+        <a class="nav-phone" href="tel:{{ site.phones[0].href }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>{{ site.phones[0].number }}</a>
+        <a class="btn btn-primary btn-sm" href="/contact/">Get in Touch</a>
+      </div>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-drawer">
+  {% for item in site.nav %}
+  <a href="{{ item.url }}">{{ item.label }}</a>
+  {% endfor %}
+  <div class="mobile-meta">
+    <a href="tel:{{ site.phones[0].href }}">{{ site.phones[0].number }}</a><br>
+    <a href="mailto:{{ site.primaryEmail }}">{{ site.primaryEmail }}</a><br>
+    Gurugram, Haryana
+  </div>
+</div>
+
+<!-- ============ DISCLAIMER MODAL (Bar Council of India) ============ -->
+<div class="disclaimer-modal">
+  <div class="disclaimer-box">
+    <h3>Disclaimer &amp; User Acknowledgement</h3>
+    <p>In accordance with the Bar Council of India Rules, this website is intended solely to provide information about VidhiCorp Legal Chambers, its advocates and areas of practice. It is not intended to constitute an advertisement, solicitation, invitation or inducement for engagement of legal services.</p>
+    <p>The information provided is for general purposes only and does not constitute legal advice or create an advocate-client relationship. The website is accessed voluntarily and at your own discretion. We recommend obtaining appropriate legal advice based on the facts and circumstances of your matter.</p>
+    <p style="font-size:13px">By proceeding, you acknowledge that you have read and understood this Disclaimer and are accessing the website of your own accord.</p>
+    <button class="btn btn-outline" data-accept>I Agree and Proceed</button>
+  </div>
+</div>
+
+<main id="main">
+{{ content | safe }}
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="brand">
+          <img src="/images/logo-crest.png" alt="VidhiCorp Legal Chambers crest" class="brand-mark">
+          <span><span class="brand-word">Vidhi<b>Corp</b></span><span class="brand-sub">Legal Chambers</span></span>
+        </a>
+        <p class="mt-16">Corporate, commercial and regulatory counsel for Indian and international businesses, based in Gurugram, serving clients across Delhi NCR, Mumbai and India.</p>
+        <div class="footer-social">
+          {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>{% endif %}
+          {% if site.social.facebook %}<a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>{% endif %}
+          {% if site.social.instagram %}<a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.6 1.8c.46-.16 1.26-.35 2.43-.4C9.3 1.34 9.68 1.33 12 1.33m0 2a34 34 0 0 0-4.7.07c-1 .05-1.55.21-1.9.35-.48.19-.83.41-1.19.77-.36.36-.58.71-.77 1.19-.14.35-.3.9-.35 1.9A34 34 0 0 0 3 12a34 34 0 0 0 .07 4.7c.05 1 .21 1.55.35 1.9.19.48.41.83.77 1.19.36.36.71.58 1.19.77.35.14.9.3 1.9.35a34 34 0 0 0 4.7.07 34 34 0 0 0 4.7-.07c1-.05 1.55-.21 1.9-.35.48-.19.83-.41 1.19-.77.36-.36.58-.71.77-1.19.14-.35.3-.9.35-1.9a34 34 0 0 0 .07-4.7 34 34 0 0 0-.07-4.7c-.05-1-.21-1.55-.35-1.9a3.2 3.2 0 0 0-.77-1.19 3.2 3.2 0 0 0-1.19-.77c-.35-.14-.9-.3-1.9-.35A34 34 0 0 0 12 4.2m0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8m0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8m5.6-2.6a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg></a>{% endif %}
+          {% if site.social.twitter %}<a href="{{ site.social.twitter }}" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.6L4.4 22H1.3l8.1-9.3L1 2h7.1l4.9 6.1L18.9 2zm-1.2 18h1.9L7.4 4H5.3l12.4 16z"/></svg></a>{% endif %}
+          <a href="{{ site.social.whatsapp }}" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.5-6c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.1-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Firm</h5>
+        <ul>
+          {% for item in site.footerFirmLinks %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Practice</h5>
+        <ul>
+          <li><a href="/practice-areas/">Practice Areas</a></li>
+          {% for pa in practiceAreas %}{% if loop.index <= 4 %}
+          <li><a href="/practice-areas/#{{ pa.id }}">{{ pa.name }}</a></li>
+          {% endif %}{% endfor %}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <address>
+          {% for line in offices[0].addressLines %}{{ line }}<br>{% endfor %}
+          <br>
+          {% for p in site.phones %}<a href="tel:{{ p.href }}">{{ p.number }}</a><br>{% endfor %}
+          <a href="mailto:{{ site.primaryEmail }}">{{ site.primaryEmail }}</a>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer">
+      In accordance with the Rules of the Bar Council of India, this website does not constitute advertising, personal solicitation, invitation or inducement of any sort. The information on this website is for general informational purposes only and does not constitute legal advice; no advocate-client relationship is created by accessing this site. Prior results do not guarantee a similar outcome.
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> VidhiCorp Legal Chambers. All rights reserved.</span>
+      <div class="legal-links">
+        {% for item in site.legalLinks %}<a href="{{ item.url }}">{{ item.label }}</a>{% endfor %}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="{{ site.social.whatsapp }}?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20a%20legal%20matter." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.5-6c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.1-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+---
+layout: base.njk
+title: "Legal Insights | Business Law Guidance for Indian Companies"
+description: "Practical legal guidance on corporate and business law, company compliance, IP protection, startup financing, employment law and dispute resolution for businesses and entrepreneurs in Delhi NCR and across India."
+permalink: /legal-insights/
+eleventyExcludeFromCollections: true
+---
+<section class="page-hero has-photo grain">
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; Legal Insights</p>
+    <h1>Legal Insights</h1>
+    <p>Practical legal guidance on corporate and business law, company compliance, intellectual property, startup financing, employment law and dispute resolution — for business owners and corporate legal counsel across Delhi NCR, Gurugram, Mumbai and India.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="insight-grid reveal">
+      {% for article in collections.legalInsights %}
+      <a class="insight-card" href="{{ article.url }}">
+        <div class="insight-img"><img src="{{ article.data.image }}" alt="{{ article.data.title }}" loading="lazy"><span class="insight-tag">{{ article.data.tag }}</span></div>
+        <div class="insight-body">
+          <h3>{{ article.data.title }}</h3>
+          <div class="meta"><span>{{ article.data.readTime }}</span><span>{{ article.data.date | monthYear }}</span></div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Free tools</p>
+        <h2>Tools to help you in business and make informed decisions.</h2>
+        <p>Our free calculators are designed to assist you in understanding the numbers, assessing your position and planning your next step.</p>
+      </div>
+      <a href="/resources/" class="btn btn-outline sec-link">All Resources</a>
+    </div>
+    <div class="pa-grid reveal" style="grid-template-columns:repeat({{ tools.length }},1fr)">
+      {% for tool in tools %}
+      <a class="pa-card" href="{{ tool.url }}" data-bg="{{ tool.image }}">
+        <span class="pa-card-img" aria-hidden="true"></span><span class="pa-card-scrim" aria-hidden="true"></span>
+        <div class="pa-card-body">
+          <svg class="pa-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">{{ tool.iconSvg | safe }}</svg>
+          <h3>{{ tool.title }}</h3>
+          <div class="pa-card-more"><p>{{ tool.desc }}</p></div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band grain">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center">Have a question of your own?</p>
+    <h2>We're happy to point you in the right direction, even before an engagement begins.</h2>
+    <div class="btn-row">
+      <a href="/contact/" class="btn btn-primary">Ask a Question</a>
+    </div>
+  </div>
+</section>
