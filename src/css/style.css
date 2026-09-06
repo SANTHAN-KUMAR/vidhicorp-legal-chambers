@@ -190,8 +190,6 @@ section{position:relative}
   box-shadow:0 1px 0 rgba(247,242,232,.08);
 }
 .site-header .container{display:flex;align-items:center;justify-content:space-between;gap:32px}
-
-.site-header .brand{margin-left:-10px}
 .brand{display:flex;align-items:center;gap:12px;color:var(--paper-50)}
 .brand svg{width:40px;height:40px;flex:none}
 .brand-mark{width:44px;height:44px;flex:none;object-fit:contain;border-radius:6px}
@@ -317,8 +315,13 @@ html.save-data .hero-media .poster-fallback{display:block}
     radial-gradient(26% 38% at 22% 88%, rgba(210,162,61,.10), transparent 65%);
   animation:meshDrift 22s ease-in-out infinite alternate;
 }
-.hero-content{position:relative;z-index:2;max-width:688px;margin:auto 0}
-@media(max-width:760px){.hero-content{margin-top:96px;margin-bottom:0}}
+.hero-content{
+  position:relative;z-index:2;max-width:688px;
+  margin-top:auto;margin-bottom:auto;margin-right:auto;
+  margin-left:max(48px, calc((100% - var(--container)) / 2 + 48px));
+}
+@media(max-width:1100px){.hero-content{margin-left:32px}}
+@media(max-width:760px){.hero-content{margin-top:96px;margin-bottom:0;margin-left:20px}}
 
 /* Floating trust badge — fills the quiet right side of the hero with a live credential */
 .hero-badge{
