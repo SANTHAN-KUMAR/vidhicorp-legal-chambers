@@ -23,8 +23,7 @@ collections:
       - { label: "Tag / Category", name: "tag", widget: "select", options: ["Intellectual Property", "Corporate & Commercial", "Regulatory", "Dispute Resolution", "Employment", "Startup Advisory", "Real Estate", "Private Client"] }
       - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
       - { label: "Read time", name: "readTime", widget: "string", default: "6 min read" }
-      - { label: "Cover image", name: "image", widget: "image", required: false, hint: "Or paste an external image URL below instead" }
-      - { label: "Cover image URL (if not uploading)", name: "image", widget: "string", required: false }
+      - { label: "Cover image", name: "image", widget: "image", required: false, hint: "Upload a file, or click 'Choose an image' and paste an external URL instead" }
       - { label: "Permalink (leave as-is unless you know why you're changing it)", name: "permalink", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 

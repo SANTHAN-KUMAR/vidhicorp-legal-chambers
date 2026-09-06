@@ -157,11 +157,11 @@
       </div>
       <div class="footer-col">
         <h5>Practice</h5>
-        <ul>
-          <li><a href="/practice-areas/">Practice Areas</a></li>
-          {% for pa in practiceAreas %}{% if loop.index <= 4 %}
+        <ul class="footer-col-scroll">
+          <li><a href="/practice-areas/"><strong>All Practice Areas</strong></a></li>
+          {% for pa in practiceAreas %}
           <li><a href="/practice-areas/#{{ pa.id }}">{{ pa.name }}</a></li>
-          {% endif %}{% endfor %}
+          {% endfor %}
         </ul>
       </div>
       <div class="footer-col">
