@@ -17,6 +17,11 @@ layout: base.njk
       <span style="font-size:13px;color:var(--text-muted)">{{ date | monthYear }} &middot; {{ readTime }}</span>
     </div>
     <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:24px">By <a href="/team/" style="color:var(--accent-strong)">{{ author or "Jankee Ballabh Pandey" }}</a>, Founder &amp; Managing Partner, VidhiCorp Legal Chambers</p>
+    {% if videoUrl %}
+    <div class="article-video">
+      <iframe src="{{ videoUrl }}" title="{{ videoTitle or title }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    {% endif %}
     {{ content | safe }}
     <p class="mt-32" style="font-size:13px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:24px">This article is general information only and does not constitute legal advice. No advocate-client relationship is created by reading it. For advice on a specific matter, <a href="/contact/">contact the chambers directly</a>.</p>
   </div>

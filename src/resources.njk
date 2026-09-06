@@ -48,14 +48,12 @@ metaDescription: "Free calculators and checklists for Indian businesses, includi
       </div>
     </div>
     <div class="rows reveal-stagger">
-      <div class="row-item" style="grid-template-columns:1fr 1.4fr">
-        <h3 style="font-size:18px">General Enquiry</h3>
-        <p>For a first conversation about a new matter. <a href="/contact/#main" style="color:var(--accent-strong)">Use the enquiry form &rarr;</a></p>
+      {% for r in resources %}
+      <div class="row-item" style="grid-template-columns:1fr 1.4fr{% if not loop.last %}{% else %};border-bottom:1px solid var(--border){% endif %}">
+        <h3 style="font-size:18px">{{ r.title }}</h3>
+        <p>{{ r.desc }} <a href="{{ r.url }}" style="color:var(--accent-strong)">{{ r.linkLabel }} &rarr;</a></p>
       </div>
-      <div class="row-item" style="grid-template-columns:1fr 1.4fr;border-bottom:1px solid var(--border)">
-        <h3 style="font-size:18px">New Matter Intake</h3>
-        <p>For existing or ready-to-engage clients formally opening a matter. <a href="/contact/#main" style="color:var(--accent-strong)">Use the intake form &rarr;</a></p>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>

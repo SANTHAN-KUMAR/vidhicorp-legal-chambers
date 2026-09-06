@@ -43,6 +43,8 @@ collections:
       - { label: "Read time", name: "readTime", widget: "string", default: "2 min read" }
       - { label: "Cover image URL", name: "image", widget: "string" }
       - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Video embed URL (optional, e.g. https://www.youtube.com/embed/ID)", name: "videoUrl", widget: "string", required: false }
+      - { label: "Video title (optional)", name: "videoTitle", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
   # ---------- Single data files (site-wide structured content) ----------
@@ -237,3 +239,17 @@ collections:
               - { label: "Sector name", name: "name", widget: "string" }
               - { label: "Description", name: "desc", widget: "text" }
               - { label: "Related practice area ID", name: "related", widget: "string" }
+
+      - name: "resources"
+        label: "Resources / Standard Forms"
+        file: "src/_data/resources.json"
+        fields:
+          - label: "Resources"
+            name: "resources"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Link label", name: "linkLabel", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Type", name: "type", widget: "select", options: ["Form", "Guide", "Checklist", "Download", "Other"] }
