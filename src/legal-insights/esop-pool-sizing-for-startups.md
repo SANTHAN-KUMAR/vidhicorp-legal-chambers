@@ -58,6 +58,8 @@ breadcrumbSchemaOverride:
       position: 3
       name: Startup Advisory
       item: "https://www.vidhicorplegal.com/legal-insights/esop-pool-sizing-for-startups/"
+metaTitle: "ESOP Pool Sizing for Indian Startups"
+metaDescription: "How large an ESOP pool should be, when to create it, and how pre-money versus post-money pool placement changes founder dilution."
 ---
 
 <div class="article-cta" style="margin-top:0;margin-bottom:36px;text-align:left">

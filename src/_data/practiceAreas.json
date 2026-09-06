@@ -56,7 +56,7 @@
   {
     "id": "funding-investments",
     "name": "Funding & Investments",
-    "shortDesc": "Loan agreements, equity and debt fundraising, and investment transaction support.",
+    "shortDesc": "Startup funding, loan agreements, equity and debt fundraising, and investment transaction support.",
     "detail": "Loan agreements and debt fundraising, equity and securities offerings, pre- and post-IPO advisory, employee stock option plans, and fintech and digital-securities advisory.",
     "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "esop-pool-sizing-for-startups",
@@ -75,7 +75,7 @@
     "id": "regulatory-compliance",
     "name": "Compliance & Regulatory Support",
     "shortDesc": "Corporate, HR and data-privacy compliance, board resolutions and regulatory filings.",
-    "detail": "Corporate secretarial compliance, board resolutions and governance, regulatory filings and licensing, HR and data-privacy compliance, contract lifecycle management, and SEBI and stock-exchange compliance advisory.",
+    "detail": "Corporate secretarial compliance, board resolutions and governance, regulatory filings and licensing, HR and data-privacy compliance, startup compliance programmes and periodic compliance audit support, contract lifecycle management and policy development.",
     "image": "https://images.unsplash.com/photo-1754039985008-a15410211b67?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "compliance-calendar-for-growing-entities",
     "iconSvg": "<path d=\"M9 11l3 3L22 4\"/><path d=\"M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11\"/>"

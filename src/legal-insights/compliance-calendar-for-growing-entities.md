@@ -58,6 +58,8 @@ breadcrumbSchemaOverride:
       position: 3
       name: Regulatory
       item: "https://www.vidhicorplegal.com/legal-insights/compliance-calendar-for-growing-entities/"
+metaTitle: "A Compliance Calendar for Growing Firms"
+metaDescription: "The annual filings, board meetings and statutory registers an Indian private company must keep on schedule as it scales after funding."
 ---
 
 <div class="article-cta" style="margin-top:0;margin-bottom:36px;text-align:left">

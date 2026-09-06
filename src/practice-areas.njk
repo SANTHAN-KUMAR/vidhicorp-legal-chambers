@@ -3,19 +3,22 @@ layout: base.njk
 title: "Practice Areas | Corporate Law, Contracts, IP & Dispute Resolution in India"
 description: "VidhiCorp Legal Chambers' 15 practice areas spanning corporate & commercial law, M&A, contracts, IP, dispute resolution, compliance, real estate and private client matters for businesses across India."
 permalink: /practice-areas/
+metaTitle: "Practice Areas & Sectors | VidhiCorp Legal Chambers"
+metaDescription: "Fifteen practice areas across corporate law, contracts, M&A, IP, employment and dispute resolution, and the sectors we advise across India."
 ---
 <section class="page-hero has-photo grain">
   <div class="ph-photo"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1400&q=55&auto=format&fit=crop" alt="" width="1400" height="933" loading="eager" fetchpriority="high" decoding="async"></div>
   <div class="container">
     <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; Practice Areas</p>
     <h1>Practice areas</h1>
-    <p>{{ practiceAreas.length }} areas of focused practice in Indian business law, organised the way problems actually arrive at our desk: rarely as a single, isolated question. Each is led by counsel with direct transactional or courtroom experience.</p>
+    <p>{{ practiceAreas.length }} areas of focused practice in corporate law in India, organised the way problems actually arrive at our desk: rarely as a single, isolated question. Each is led by counsel with direct transactional or courtroom experience.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
     <p class="eyebrow reveal" style="justify-content:flex-start">Tap or hover any area for detail</p>
+    <h2 class="sr-only">All 15 practice areas</h2>
     <div class="pa-grid reveal">
       {% for pa in practiceAreas %}
       <div class="pa-card{% if pa.wide %} pa-card-wide{% endif %}" id="{{ pa.id }}" data-bg="{{ pa.image }}">
@@ -45,7 +48,7 @@ permalink: /practice-areas/
     <div class="rows reveal-stagger">
       {% for pa in practiceAreas %}
       <div class="row-item" style="grid-template-columns:260px 1fr{% if loop.last %};border-bottom:1px solid var(--border){% endif %}">
-        <h4 style="font-size:18px">{{ pa.name }}</h4>
+        <h3 style="font-size:18px">{{ pa.name }}</h3>
         <div>
           <p>{{ pa.detail }}</p>
           {% if pa.relatedInsight %}

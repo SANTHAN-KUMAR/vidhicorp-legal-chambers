@@ -7,6 +7,8 @@ date: 2026-07-02
 readTime: '3 min read'
 image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=75&auto=format&fit=crop'
 permalink: /legal-updates/posh-annual-report-filing-obligation/
+metaTitle: "The POSH Annual Report Is a Filing"
+metaDescription: "Every Internal Committee must file an annual report with the District Officer, and the Board's Report must carry a POSH statement."
 ---
 
 ## What the law requires

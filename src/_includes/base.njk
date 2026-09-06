@@ -3,21 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ title }}{% if title %} | {% endif %}VidhiCorp Legal Chambers</title>
-<meta name="description" content="{{ description }}">
+{#- Search-result title. `metaTitle` overrides the on-page H1/title where the
+    headline is too long for a SERP. The brand suffix is appended only when the
+    title does not already carry it, so it is never duplicated. -#}
+{%- set _t = metaTitle or title -%}
+{%- if not _t -%}{%- set pageTitle = "VidhiCorp Legal Chambers" -%}
+{%- elif "VidhiCorp" in _t -%}{%- set pageTitle = _t -%}
+{%- else -%}{%- set pageTitle = _t + " | VidhiCorp" -%}
+{%- endif -%}
+{%- set pageDesc = metaDescription or description -%}
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDesc }}">
 <link rel="canonical" href="{{ site.domain }}{{ canonicalPath or page.url }}">
 <!-- Open Graph -->
 <meta property="og:type" content="{{ ogType or 'website' }}">
 <meta property="og:site_name" content="VidhiCorp Legal Chambers">
-<meta property="og:title" content="{{ title }}{% if title %} | {% endif %}VidhiCorp Legal Chambers">
-<meta property="og:description" content="{{ description }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
 <meta property="og:url" content="{{ site.domain }}{{ canonicalPath or page.url }}">
 <meta property="og:image" content="{{ ogImage or (site.domain + '/images/og-image.jpg') }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ title }}{% if title %} | {% endif %}VidhiCorp Legal Chambers">
-<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:title" content="{{ pageTitle }}">
+<meta name="twitter:description" content="{{ pageDesc }}">
 <meta name="twitter:image" content="{{ ogImage or (site.domain + '/images/og-image.jpg') }}">
 
 <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -102,7 +111,7 @@
       <img src="/images/logo-crest.png" alt="VidhiCorp Legal Chambers" width="44" height="44">
       <span><span class="brand-word">Vidhi<b>Corp</b></span><span class="brand-sub">Legal Chambers</span></span>
     </div>
-    <h2 id="bci-gate-title">Disclaimer &amp; User Acknowledgement</h2>
+    <p class="bci-gate-title" id="bci-gate-title">Disclaimer &amp; User Acknowledgement</p>
     <div id="bci-gate-body" class="bci-gate-body">
       <p>In accordance with the Bar Council of India Rules, this website is intended solely to provide information about VidhiCorp Legal Chambers, its advocates and areas of practice. It is not intended to constitute an advertisement, solicitation, invitation or inducement for engagement of legal services.</p>
       <p>The information provided is for general purposes only and does not constitute legal advice or create an advocate-client relationship. The website is accessed voluntarily and at your own discretion. We recommend obtaining appropriate legal advice based on the facts and circumstances of your matter.</p>
@@ -193,7 +202,7 @@
         </div>
       </div>
       <div class="footer-col">
-        <h5>Firm</h5>
+        <h2 class="footer-col-title">Firm</h2>
         <ul>
           {% for item in site.footerFirmLinks %}
           <li><a href="{{ item.url }}">{{ item.label }}</a></li>
@@ -201,7 +210,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Practice</h5>
+        <h2 class="footer-col-title">Practice</h2>
         <ul class="footer-col-scroll">
           <li><a href="/practice-areas/"><strong>All Practice Areas</strong></a></li>
           {% for pa in practiceAreas %}
@@ -210,7 +219,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Contact</h5>
+        <h2 class="footer-col-title">Contact</h2>
         <address>
           {% for line in offices[0].addressLines %}{{ line }}<br>{% endfor %}
           <br>

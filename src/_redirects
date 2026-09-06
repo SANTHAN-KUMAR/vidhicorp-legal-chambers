@@ -6,3 +6,11 @@
 # as two separate URLs. Enable "Force HTTPS" separately in Netlify's
 # Domain settings — that part isn't controlled by this file.
 https://vidhicorplegal.com/*  https://www.vidhicorplegal.com/:splat  301!
+
+# The client's former practice site redirects here, preserving deep links.
+# Requires atblegalservices.com to be added as a domain alias on the host first.
+# NOTE: pramahlawmen.com is NOT owned by the client and must never be redirected.
+https://atblegalservices.com/*      https://www.vidhicorplegal.com/:splat  301!
+https://www.atblegalservices.com/*  https://www.vidhicorplegal.com/:splat  301!
+http://atblegalservices.com/*       https://www.vidhicorplegal.com/:splat  301!
+http://www.atblegalservices.com/*   https://www.vidhicorplegal.com/:splat  301!

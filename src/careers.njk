@@ -3,6 +3,8 @@ layout: base.njk
 title: "Careers | VidhiCorp Legal Chambers"
 description: "VidhiCorp Legal Chambers invites legal professionals and specialists from across disciplines to join as Associate, Senior Associate, Counsel, Partner or Consultant in Gurugram."
 permalink: /careers/
+metaTitle: "Careers & Openings | VidhiCorp Legal Chambers"
+metaDescription: "Current openings for Associates, Senior Associates, Counsels, Partners and Consultants at VidhiCorp Legal Chambers in Gurugram."
 ---
 <section class="page-hero has-photo grain">
   <div class="ph-photo"><img src="/images/hero-protect-poster.jpg" alt="VidhiCorp Legal Chambers, Gurugram — careers and openings" width="1400" height="933" loading="eager" fetchpriority="high" decoding="async"></div>
@@ -35,7 +37,7 @@ permalink: /careers/
       {% for job in careers %}
       <div class="row-item" style="grid-template-columns:1fr 2fr 100px{% if loop.last %};border-bottom:1px solid var(--border){% endif %}">
         <div>
-          <h4 style="font-size:18px">{{ job.role }}</h4>
+          <h3 style="font-size:18px">{{ job.role }}</h3>
           <p style="font-size:13px;color:var(--text-muted);margin-top:4px">{{ job.location }} &middot; {{ job.type }}</p>
         </div>
         <p>{{ job.desc }}</p>

@@ -58,6 +58,8 @@ breadcrumbSchemaOverride:
       position: 3
       name: Intellectual Property
       item: "https://www.vidhicorplegal.com/legal-insights/trademark-renewal-timelines/"
+metaTitle: "Trademark Renewal in India: Timelines & TM-R"
+metaDescription: "How trademark renewal works in India: the ten-year term, TM-R filing, the six-month window, restoration, and the dates businesses miss."
 ---
 
 <div class="article-cta" style="margin-top:0;margin-bottom:36px;text-align:left">

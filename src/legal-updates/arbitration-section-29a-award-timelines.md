@@ -7,6 +7,8 @@ date: 2026-06-18
 readTime: '3 min read'
 image: 'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=1600&q=75&auto=format&fit=crop'
 permalink: /legal-updates/arbitration-section-29a-award-timelines/
+metaTitle: "Section 29A: When an Arbitral Mandate Lapses"
+metaDescription: "An award is due twelve months from completion of pleadings, extendable by six. Beyond that the tribunal's mandate terminates by law."
 ---
 
 ## The rule

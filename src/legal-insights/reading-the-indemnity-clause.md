@@ -58,6 +58,8 @@ breadcrumbSchemaOverride:
       position: 3
       name: Corporate & Commercial
       item: "https://www.vidhicorplegal.com/legal-insights/reading-the-indemnity-clause/"
+metaTitle: "How to Read an Indemnity Clause"
+metaDescription: "What an indemnity actually covers, how caps, baskets and survival periods work, and where Indian commercial contracts most often go wrong."
 ---
 
 <div class="article-cta" style="margin-top:0;margin-bottom:36px;text-align:left">

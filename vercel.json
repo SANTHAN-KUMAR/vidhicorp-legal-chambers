@@ -3,7 +3,34 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "vidhicorplegal.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "vidhicorplegal.com"
+        }
+      ],
+      "destination": "https://www.vidhicorplegal.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "atblegalservices.com"
+        }
+      ],
+      "destination": "https://www.vidhicorplegal.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.atblegalservices.com"
+        }
+      ],
       "destination": "https://www.vidhicorplegal.com/:path*",
       "permanent": true
     }

@@ -58,6 +58,8 @@ breadcrumbSchemaOverride:
       position: 3
       name: Dispute Resolution
       item: "https://www.vidhicorplegal.com/legal-insights/arbitration-vs-litigation-timing/"
+metaTitle: "Arbitration or Litigation: Choosing a Forum"
+metaDescription: "When arbitration genuinely beats a civil suit in India, what it costs, how long each takes, and how to draft the clause before a dispute."
 ---
 
 <div class="article-cta" style="margin-top:0;margin-bottom:36px;text-align:left">

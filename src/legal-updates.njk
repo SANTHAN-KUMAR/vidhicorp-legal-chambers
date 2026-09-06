@@ -4,6 +4,8 @@ title: "Legal Updates | Business Law Insights & Updates — VidhiCorp Legal Cham
 description: "Short, timely updates on new judgments, legislation and regulatory developments relevant to Indian businesses, from VidhiCorp Legal Chambers."
 permalink: /legal-updates/
 eleventyExcludeFromCollections: true
+metaTitle: "Legal Updates for Indian Businesses | VidhiCorp"
+metaDescription: "Short, timely notes on new judgments, legislation and regulatory developments affecting businesses in India, from VidhiCorp Legal Chambers."
 ---
 <section class="page-hero has-photo grain">
   <div class="ph-photo"><img src="https://images.unsplash.com/photo-1631972756622-b2d9164c0e53?w=1400&q=55&auto=format&fit=crop" alt="" width="1400" height="933" loading="eager" fetchpriority="high" decoding="async"></div>
@@ -17,6 +19,7 @@ eleventyExcludeFromCollections: true
 <section class="section-tight">
   <div class="container">
     {% if collections.legalUpdates.length %}
+    <h2 class="sr-only">Latest Legal Updates</h2>
     <div class="insight-grid reveal">
       {% for update in collections.legalUpdates %}
       <a class="insight-card" href="{{ update.url }}">

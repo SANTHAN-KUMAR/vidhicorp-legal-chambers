@@ -7,6 +7,8 @@ date: 2026-07-30
 readTime: '3 min read'
 image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=75&auto=format&fit=crop'
 permalink: /legal-updates/ibc-section-4-threshold-one-crore/
+metaTitle: "IBC Threshold Stays at Rs 1 Crore"
+metaDescription: "The minimum default for a corporate insolvency application is Rs 1 crore. What trade creditors below the threshold should do instead."
 ---
 
 ## What changed

@@ -11,6 +11,11 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^vidhicorplegal\.com [NC]
 RewriteRule ^(.*)$ https://www.vidhicorplegal.com/$1 [L,R=301]
 
+# Redirect the client's former practice domain here, preserving deep links.
+# pramahlawmen.com is NOT owned by the client and is deliberately absent.
+RewriteCond %{HTTP_HOST} ^(www\.)?atblegalservices\.com [NC]
+RewriteRule ^(.*)$ https://www.vidhicorplegal.com/$1 [L,R=301]
+
 ErrorDocument 404 /404.html
 
 # Basic caching for static assets

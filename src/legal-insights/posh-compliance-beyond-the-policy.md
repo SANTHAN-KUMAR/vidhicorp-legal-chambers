@@ -58,6 +58,8 @@ breadcrumbSchemaOverride:
       position: 3
       name: Employment
       item: "https://www.vidhicorplegal.com/legal-insights/posh-compliance-beyond-the-policy/"
+metaTitle: "POSH Compliance Beyond the Policy"
+metaDescription: "Constituting a valid Internal Committee, running a lawful enquiry, and the POSH obligations Indian employers most commonly overlook."
 ---
 
 <div class="article-cta" style="margin-top:0;margin-bottom:36px;text-align:left">

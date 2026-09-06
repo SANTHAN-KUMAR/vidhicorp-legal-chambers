@@ -7,6 +7,8 @@ date: 2026-08-14
 readTime: '3 min read'
 image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=75&auto=format&fit=crop'
 permalink: /legal-updates/msme-payment-45-days-section-43b-h/
+metaTitle: "Section 43B(h): Pay MSMEs Within 45 Days"
+metaDescription: "Amounts payable to registered micro and small suppliers are deductible only if paid within the MSMED Act time limit. What buyers must do."
 ---
 
 ## What changed

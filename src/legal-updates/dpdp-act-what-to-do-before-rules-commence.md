@@ -7,6 +7,8 @@ date: 2026-07-16
 readTime: '4 min read'
 image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600&q=75&auto=format&fit=crop'
 permalink: /legal-updates/dpdp-act-what-to-do-before-rules-commence/
+metaTitle: "DPDP Act: What to Do Before Commencement"
+metaDescription: "Data mapping, consent, processor contracts and employee data: the preparatory work Indian businesses need before DPDP obligations begin."
 ---
 
 ## Where things stand

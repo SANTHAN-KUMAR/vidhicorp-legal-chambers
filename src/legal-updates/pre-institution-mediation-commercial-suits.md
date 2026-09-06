@@ -7,6 +7,8 @@ date: 2026-08-28
 readTime: '3 min read'
 image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1600&q=75&auto=format&fit=crop'
 permalink: /legal-updates/pre-institution-mediation-commercial-suits/
+metaTitle: "Section 12A Mediation Is Mandatory"
+metaDescription: "The Supreme Court has held Section 12A pre-institution mediation mandatory. Commercial plaints that skip it are liable to be rejected."
 ---
 
 ## What changed
