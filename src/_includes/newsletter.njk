@@ -1,8 +1,34 @@
-<!-- Newsletter signup — currently captures to Formspree; connect a real ESP (Mailchimp/Brevo) for list management and sends -->
+{#
+  Newsletter signup. Captures to Formspree today; swap the action for a
+  Mailchimp/Brevo endpoint when the client's list is created — the markup and
+  field names are already what those providers expect.
+  Set `newsletterVariant = "light"` before including it on a page that already
+  ends in a dark CTA band, so two dark bands never stack.
+#}
+{% if newsletterVariant == "light" %}
+<section class="section newsletter-light">
+  <div class="container">
+    <div class="newsletter-inner">
+      <p class="eyebrow">Subscribe for Legal Updates</p>
+      <h2>Get new Legal Updates and Legal Insights in your inbox.</h2>
+      <p class="newsletter-sub">Short, practical notes on judgments, legislation and regulatory change affecting Indian businesses — sent only when there is something worth sending. No solicitation, and you can unsubscribe at any time.</p>
+      <form class="newsletter-form" novalidate action="https://formspree.io/f/xyeypwkd" method="POST" data-ajax data-success-message="Thank you — you're subscribed.">
+        <input type="hidden" name="_subject" value="Newsletter signup — VidhiCorp website">
+        <div class="newsletter-row">
+          <input type="email" name="email" required placeholder="you@company.com" aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </div>
+        <div class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+{% else %}
 <section class="cta-band grain">
   <div class="container">
     <p class="eyebrow" style="justify-content:center">Subscribe for Legal Updates</p>
     <h2>Get new Legal Updates and Legal Insights in your inbox.</h2>
+    <p class="newsletter-sub" style="margin:14px auto 0;max-width:60ch;color:rgba(247,242,232,.72)">Short, practical notes on judgments, legislation and regulatory change affecting Indian businesses. No solicitation, and you can unsubscribe at any time.</p>
     <form id="newsletter-form" novalidate action="https://formspree.io/f/xyeypwkd" method="POST" data-ajax data-success-message="Thank you — you're subscribed.">
       <input type="hidden" name="_subject" value="Newsletter signup — VidhiCorp website">
       <div class="btn-row" style="flex-wrap:wrap;justify-content:center;gap:12px">
@@ -13,3 +39,4 @@
     </form>
   </div>
 </section>
+{% endif %}

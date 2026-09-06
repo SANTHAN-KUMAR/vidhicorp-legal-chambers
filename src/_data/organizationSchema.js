@@ -8,7 +8,8 @@ module.exports = () => {
 
   return {
     "@context": "https://schema.org",
-    "@type": ["LegalService", "Attorney"],
+    "@type": ["LegalService", "Attorney", "Organization"],
+    "@id": `${site.domain}/#organization`,
     name: site.name,
     description:
       "End-to-end legal, compliance, HR and POSH solutions. Strategic legal partner for businesses across corporate, commercial, employment, compliance and dispute resolution matters.",

@@ -29,6 +29,39 @@ module.exports = {
   schema: (data) => {
     if (data.pageSchema) return data.pageSchema;
 
+    // Legal Updates are short, timely notes on judgments, legislation and
+    // regulatory developments — NewsArticle is the genuinely applicable type.
+    if (
+      data.page.filePathStem.startsWith("/legal-updates/") &&
+      data.page.filePathStem !== "/legal-updates/legal-updates"
+    ) {
+      return {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        headline: data.title,
+        description: data.description,
+        image: data.image,
+        datePublished: data.date,
+        dateModified: data.date,
+        articleSection: data.tag,
+        inLanguage: "en-IN",
+        isAccessibleForFree: true,
+        mainEntityOfPage: { "@type": "WebPage", "@id": `${data.site.domain}${data.page.url}` },
+        author: {
+          "@type": "Person",
+          name: data.author || data.team.founder.name,
+          jobTitle: data.team.founder.title,
+          url: `${data.site.domain}/team/`,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: data.site.name,
+          url: `${data.site.domain}/`,
+          logo: { "@type": "ImageObject", url: `${data.site.domain}/images/logo-lockup.png` },
+        },
+      };
+    }
+
     if (data.page.url === "/team/") {
       return [
         {
@@ -56,19 +89,38 @@ module.exports = {
     }
 
     if (data.page.url !== "/practice-areas/") return null;
-    return {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      name: "VidhiCorp Legal Chambers — Practice Areas",
-      itemListElement: data.practiceAreas.map((pa, i) => ({
-        "@type": "Service",
-        position: i + 1,
-        name: pa.name,
-        provider: { "@type": "LegalService", name: data.site.name },
-        areaServed: "IN",
-        description: pa.shortDesc,
-      })),
-    };
+    return [
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "VidhiCorp Legal Chambers — Practice Areas",
+        numberOfItems: data.practiceAreas.length,
+        itemListElement: data.practiceAreas.map((pa, i) => ({
+          "@type": "Service",
+          position: i + 1,
+          name: pa.name,
+          url: `${data.site.domain}/practice-areas/#${pa.id}`,
+          provider: { "@id": `${data.site.domain}/#organization` },
+          areaServed: "IN",
+          description: pa.shortDesc,
+        })),
+      },
+      // Sectors are a distinct axis from practice areas — declaring them
+      // separately lets search and AI systems answer "whom do they advise?"
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "VidhiCorp Legal Chambers — Sectors Served",
+        numberOfItems: data.sectors.length,
+        itemListElement: data.sectors.map((sec, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: sec.name,
+          url: `${data.site.domain}/practice-areas/#${sec.id}`,
+          description: sec.desc,
+        })),
+      },
+    ];
   },
 
   // Auto-generate a 2-level BreadcrumbList (Home > Page) for every page.
@@ -77,6 +129,21 @@ module.exports = {
   // base.njk prefers that when present.
   breadcrumbSchema: (data) => {
     if (!data.title || data.page.url === "/") return null;
+
+    // Articles sitting inside a section get a 3-level trail that matches the
+    // visible breadcrumb: Home > Section > Article.
+    if (data.sectionLabel && data.sectionUrl && data.page.url !== data.sectionUrl) {
+      return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${data.site.domain}/` },
+          { "@type": "ListItem", position: 2, name: data.sectionLabel, item: `${data.site.domain}${data.sectionUrl}` },
+          { "@type": "ListItem", position: 3, name: data.title, item: `${data.site.domain}${data.page.url}` },
+        ],
+      };
+    }
+
     return {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",

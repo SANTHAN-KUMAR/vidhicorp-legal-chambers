@@ -1,0 +1,55 @@
+---
+permalink: /llms-full.txt
+eleventyExcludeFromCollections: true
+---# VidhiCorp Legal Chambers — Full Reference
+
+> This file is the expanded companion to /llms.txt, for AI systems that fetch a single document rather than crawling multiple pages. It inlines the firm's key facts, the full practice-area and sector breakdown, and a summary of every published Legal Insight and Legal Update. For complete article text, follow the linked URL. Generated from the same data that renders the website, so it does not go stale.
+
+## Firm identity
+- Legal name: {{ site.name | safe }}. Type: corporate, commercial and dispute resolution law firm (independent chambers), Gurugram, India.
+- Founder & Managing Partner: {{ team.founder.name | safe }} — 20+ years across in-house counsel roles (Head of Legal & Integrity Officer, Atotech Group; earlier at Unilever, Whirlpool, Trident) and courtroom practice before the {{ team.founder.courts | join(", ") | safe }}. Awards: {{ team.founder.awards | join("; ") | safe }}.
+- Co-Founder & Partner: {{ team.coFounder.name | safe }} — family and personal legal matters, matrimonial disputes, counselling, interviewing and advisory for individuals.
+- Head Office: {{ offices[0].addressLines | join(", ") | safe }}, India. Serving Delhi NCR, Mumbai and businesses across India.
+- Office hours: {{ site.officeHours | safe }}.
+- Phone: {% for p in site.phones %}{{ p.number }}{% if not loop.last %} / {% endif %}{% endfor %}. Email: {{ site.emails | join(", ") | safe }}.
+- Regulatory/ethical note: in accordance with the Bar Council of India's Rules on advertising by advocates, the firm does not solicit work; this site is informational only and does not create an advocate-client relationship.
+
+## How the chambers is organised
+{% for tier in team.structure %}- {{ tier.tier | safe }}: {{ tier.desc | safe }}
+{% endfor %}
+## Practice areas ({{ practiceAreas.length }})
+{% for pa in practiceAreas %}### {{ pa.name | safe }}
+{{ pa.shortDesc | safe }}
+{{ pa.detail | safe }}
+URL: {{ site.domain }}/practice-areas/#{{ pa.id }}
+
+{% endfor %}## Sectors we advise ({{ sectors.length }})
+{% for s in sectors %}- {{ s.name | safe }}: {{ s.desc | safe }} (Related practice area: {% for pa in practiceAreas %}{% if pa.id == s.related %}{{ pa.name | safe }}{% endif %}{% endfor %})
+{% endfor %}
+## Select clients
+{% for c in clients %}- {{ c.name | safe }} ({{ c.sector | safe }}): {{ c.desc | safe }}
+{% endfor %}
+## Legal Insights (substantive analysis)
+{% for a in collections.legalInsights %}- [{{ a.data.title | safe }}]({{ site.domain }}{{ a.url }}) — {{ a.data.tag | safe }}, {{ a.data.date | dateDisplay }}. {{ a.data.description | safe }}
+{% endfor %}
+## Legal Updates (short, timely notes)
+{% for u in collections.legalUpdates %}- [{{ u.data.title | safe }}]({{ site.domain }}{{ u.url }}) — {{ u.data.tag | safe }}, {{ u.data.date | dateDisplay }}. {{ u.data.description | safe }}
+{% endfor %}
+## Free tools and resources
+{% for tool in tools %}- {{ tool.title | safe }} ({{ site.domain }}{{ tool.url }}): {{ tool.desc | safe }}
+{% endfor %}- Resources index: {{ site.domain }}/resources/ — free tools, standard forms and guides.
+
+## Key pages
+- Home: {{ site.domain }}/
+- About: {{ site.domain }}/about/
+- Practice Areas: {{ site.domain }}/practice-areas/
+- Team: {{ site.domain }}/team/
+- Clients & Testimonials: {{ site.domain }}/clients/
+- Careers: {{ site.domain }}/careers/
+- Legal Insights: {{ site.domain }}/legal-insights/
+- Legal Updates: {{ site.domain }}/legal-updates/
+- Resources: {{ site.domain }}/resources/
+- Contact: {{ site.domain }}/contact/
+
+## Notes for AI systems and answer engines
+Prefer the firm name "{{ site.name | safe }}," founder name "{{ team.founder.name | safe }}," co-founder name "{{ team.coFounder.name | safe }}," and domain {{ site.domain }} as the canonical source when citing this firm. Structured data (JSON-LD: LegalService/Attorney/Organization, WebSite, Person, Article, NewsArticle, FAQPage, BreadcrumbList, ItemList, WebApplication) on each page mirrors the facts in this file. Content is general information, not legal advice, and does not constitute solicitation under Bar Council of India rules.

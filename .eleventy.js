@@ -7,7 +7,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/site.webmanifest");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/llms-full.txt");
   eleventyConfig.addPassthroughCopy("src/_redirects");
   eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.addPassthroughCopy("src/admin");
@@ -23,6 +22,24 @@ module.exports = function (eleventyConfig) {
     if (!isoDate) return "";
     const d = new Date(isoDate + "T00:00:00+05:30");
     return d.toUTCString().replace("GMT", "+0000");
+  });
+
+  // Re-request remote images at the size they are actually displayed.
+  // Cover images are authored (and entered in the CMS) at article size; a
+  // 16:10 card or a filtered background hero does not need those pixels.
+  eleventyConfig.addFilter("imgSize", (url, width, quality) => {
+    if (!url || typeof url !== "string") return url;
+    if (!/^https?:\/\/images\.unsplash\.com\//.test(url)) return url;
+    try {
+      const u = new URL(url);
+      u.searchParams.set("w", String(width));
+      u.searchParams.set("q", String(quality || 60));
+      u.searchParams.set("auto", "format");
+      u.searchParams.set("fit", "crop");
+      return u.toString();
+    } catch (e) {
+      return url;
+    }
   });
 
   eleventyConfig.addFilter("monthYear", (isoDate) => {

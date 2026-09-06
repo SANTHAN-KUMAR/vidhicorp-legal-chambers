@@ -10,7 +10,7 @@ eleventyExcludeFromCollections: true
   <div class="hero-media" aria-hidden="true">
     <video class="hero-video-el is-active" data-slot="a" data-src="/videos/hero-prevent.mp4" muted loop playsinline preload="none" poster="/images/hero-prevent-poster.jpg"></video>
     <video class="hero-video-el" data-slot="b" muted loop playsinline preload="none"></video>
-    <img class="poster-fallback" src="/images/hero-prevent-poster.jpg" alt="">
+    <img class="poster-fallback" src="/images/hero-prevent-poster.jpg" alt="VidhiCorp Legal Chambers — corporate and commercial legal counsel in Gurugram" width="1600" height="900" fetchpriority="high" decoding="async">
   </div>
   <div class="hero-mesh" aria-hidden="true"></div>
 
@@ -19,7 +19,7 @@ eleventyExcludeFromCollections: true
     <span class="hb-label">Years advising businesses through growth, risk and dispute: one dedicated partner, start to finish.</span>
   </div>
 
-  <div class="container hero-content">
+  <div class="hero-content">
     <p class="eyebrow">VidhiCorp Legal Chambers · Gurugram, India</p>
     <h1 class="hero-title">Legal counsel built around your <em>business</em>.</h1>
     <p class="hero-sub">Mitigate risks before disputes arise, with counsel who understand the commercial decision, not just the legal one.</p>
@@ -76,7 +76,7 @@ eleventyExcludeFromCollections: true
   <div class="container">
     <div class="two-col" style="align-items:stretch">
       <div class="reveal photo-panel" style="aspect-ratio:auto;min-height:520px">
-        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1000&q=75&auto=format&fit=crop" alt="Corporate legal team reviewing a business decision">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1000&q=65&auto=format&fit=crop" alt="Corporate legal counsel reviewing a business decision with a client" width="1000" height="1250" loading="lazy" decoding="async">
         <div class="photo-caption">
           <p class="eyebrow" style="color:var(--brass-300)">Who we are</p>
           <p style="font-family:var(--font-display);font-size:22px;line-height:1.5;font-weight:400;color:var(--paper-50);max-width:26ch">Strategic legal solutions across the entire business lifecycle.</p>
@@ -132,6 +132,18 @@ eleventyExcludeFromCollections: true
         </div>
       </div>
       {% endif %}{% endfor %}
+    </div>
+
+    <div class="pa-rest reveal">
+      <p class="pa-rest-label">Also advising on</p>
+      <ul class="pa-rest-list">
+        {% for pa in practiceAreas %}{% if loop.index > 6 %}
+        <li><a href="/practice-areas/#{{ pa.id }}">{{ pa.name }}</a></li>
+        {% endif %}{% endfor %}
+      </ul>
+      <a href="/practice-areas/" class="btn btn-outline pa-rest-cta">View All {{ practiceAreas.length }} Practice Areas
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -194,7 +206,7 @@ eleventyExcludeFromCollections: true
       </div>
     </div>
     <div class="sector-strip reveal">
-      {% for s in sectors %}<span class="sector-chip">{{ s }}</span>{% endfor %}
+      {% for s in sectors %}<a class="sector-chip" href="/practice-areas/#{{ s.id }}">{{ s.name }}</a>{% endfor %}
     </div>
   </div>
 </section>
@@ -212,7 +224,7 @@ eleventyExcludeFromCollections: true
     <div class="insight-grid reveal">
       {% for article in collections.legalInsights %}{% if loop.index <= 3 %}
       <a class="insight-card" href="{{ article.url }}">
-        <div class="insight-img"><img src="{{ article.data.image }}" alt="{{ article.data.title }}" loading="lazy"><span class="insight-tag">{{ article.data.tag }}</span></div>
+        <div class="insight-img"><img src="{{ article.data.image | imgSize(800, 65) }}" alt="{{ article.data.title }}" width="800" height="500" loading="lazy" decoding="async"><span class="insight-tag">{{ article.data.tag }}</span></div>
         <div class="insight-body">
           <h3>{{ article.data.title }}</h3>
           <div class="meta"><span>{{ article.data.readTime }}</span><span>Legal Insights</span></div>
@@ -224,6 +236,9 @@ eleventyExcludeFromCollections: true
 </section>
 
 <!-- ============ CTA ============ -->
+{% set newsletterVariant = "light" %}
+{% include "newsletter.njk" %}
+
 <section class="cta-band grain">
   <div class="container">
     <p class="eyebrow" style="justify-content:center">Start a conversation</p>

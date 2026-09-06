@@ -229,4 +229,11 @@ collections:
         label: "Sectors We Advise"
         file: "src/_data/sectors.json"
         fields:
-          - { label: "Sectors", name: "sectors", widget: "list" }
+          - label: "Sectors"
+            name: "sectors"
+            widget: "list"
+            fields:
+              - { label: "ID (URL anchor, e.g. banking-finance)", name: "id", widget: "string" }
+              - { label: "Sector name", name: "name", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Related practice area ID", name: "related", widget: "string" }

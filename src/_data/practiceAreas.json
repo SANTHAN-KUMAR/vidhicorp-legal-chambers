@@ -4,7 +4,7 @@
     "name": "Corporate & Commercial Advisory",
     "shortDesc": "Governance, contract management and business structuring for enterprises that are actively growing.",
     "detail": "Corporate governance, legal compliance and risk management; contract management; business valuation, accounting and auditing support; business structuring and restructuring; ESOP solutions; international trade advisory.",
-    "image": "https://images.unsplash.com/photo-1637665662134-db459c1bbb46?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1637665662134-db459c1bbb46?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "",
     "iconSvg": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"13\" rx=\"1\"/><path d=\"M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"/><line x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/>"
   },
@@ -13,7 +13,7 @@
     "name": "Transactions & Strategic Advisory",
     "shortDesc": "Business advisory and transaction structuring across every stage of the deal lifecycle.",
     "detail": "Domestic and cross-border transaction structuring; contract drafting and review; financing and investment support; real estate and employment-linked transaction advisory; strategic business advisory across the deal lifecycle.",
-    "image": "https://images.unsplash.com/photo-1758873271740-f1fd6c6f1524?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1758873271740-f1fd6c6f1524?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "",
     "iconSvg": "<path d=\"M3 17l6-6 4 4 8-8\"/><path d=\"M17 7h4v4\"/>"
   },
@@ -22,7 +22,7 @@
     "name": "Contracts & Agreements",
     "shortDesc": "Drafting, negotiation and review of commercial contracts and shareholder agreements.",
     "detail": "Employment and sales contracts, lease agreements, partnership deeds, AOA/MOA and other corporate documents, shareholder agreements, NDAs, settlement and arbitration agreements, powers of attorney.",
-    "image": "https://images.unsplash.com/photo-1562564055-71e051d33c19?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1562564055-71e051d33c19?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "reading-the-indemnity-clause",
     "iconSvg": "<path d=\"M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z\"/><path d=\"M14 4v5h5\"/><path d=\"M8 13h8M8 16h5\"/>"
   },
@@ -31,7 +31,7 @@
     "name": "Joint Ventures",
     "shortDesc": "Structuring and documentation for joint ventures and strategic alliances.",
     "detail": "Structuring and negotiation of joint ventures and strategic alliances, JV agreements, governance arrangements between partners, and dispute-avoidance mechanisms built into the documentation from the outset.",
-    "image": "https://images.unsplash.com/photo-1579389083046-e3df9c2b3325?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "",
     "iconSvg": "<circle cx=\"9\" cy=\"12\" r=\"6\"/><circle cx=\"15\" cy=\"12\" r=\"6\" opacity=\"0.55\"/>"
   },
@@ -40,16 +40,16 @@
     "name": "Mergers & Acquisitions",
     "shortDesc": "Due diligence, valuation and deal structuring, through to post-transaction integration.",
     "detail": "Pre-transaction due diligence and valuation; negotiation of purchase, merger and shareholder agreements, NDAs and letters of intent; regulatory compliance and financing; post-transaction integration and governance.",
-    "image": "https://images.unsplash.com/photo-1462396240927-52058a6a84ec?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1462396240927-52058a6a84ec?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "",
-    "iconSvg": "<path d=\"M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z\"/>"
+    "iconSvg": "<path d=\"M3 5h5a4 4 0 0 1 4 4v10\"/><path d=\"M21 5h-5a4 4 0 0 0-4 4\"/><path d=\"M12 19l-3-3M12 19l3-3\"/>"
   },
   {
     "id": "cross-border",
     "name": "Cross-Border Transactions",
     "shortDesc": "International contracts, trade compliance, and cross-border M&A and financing.",
     "detail": "International contract drafting and review, trade compliance, cross-border M&A and foreign investment structuring, regulatory approvals, tax planning, and currency and exchange-control considerations.",
-    "image": "https://images.unsplash.com/photo-1590497008432-598f04441de8?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1590497008432-598f04441de8?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "",
     "iconSvg": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18\"/><path d=\"M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18\"/>"
   },
@@ -58,7 +58,7 @@
     "name": "Funding & Investments",
     "shortDesc": "Loan agreements, equity and debt fundraising, and investment transaction support.",
     "detail": "Loan agreements and debt fundraising, equity and securities offerings, pre- and post-IPO advisory, employee stock option plans, and fintech and digital-securities advisory.",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "esop-pool-sizing-for-startups",
     "iconSvg": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9 8h6M9 12h4a2 2 0 0 0 0-4M9 12l5 5\"/>"
   },
@@ -67,7 +67,7 @@
     "name": "Employment, HR & POSH",
     "shortDesc": "Contracts, policies and disciplinary matters, including POSH / ICC investigations.",
     "detail": "Employment contracts, offer and appointment letters, handbooks and policies, disciplinary proceedings and terminations, union and workplace-safety matters, and full POSH services including external ICC membership, awareness training and inquiry reports.",
-    "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "posh-compliance-beyond-the-policy",
     "iconSvg": "<circle cx=\"12\" cy=\"8\" r=\"5\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7\"/>"
   },
@@ -76,7 +76,7 @@
     "name": "Compliance & Regulatory Support",
     "shortDesc": "Corporate, HR and data-privacy compliance, board resolutions and regulatory filings.",
     "detail": "Corporate secretarial compliance, board resolutions and governance, regulatory filings and licensing, HR and data-privacy compliance, contract lifecycle management, and SEBI and stock-exchange compliance advisory.",
-    "image": "https://images.unsplash.com/photo-1754039985008-a15410211b67?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1754039985008-a15410211b67?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "compliance-calendar-for-growing-entities",
     "iconSvg": "<path d=\"M9 11l3 3L22 4\"/><path d=\"M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11\"/>"
   },
@@ -85,7 +85,7 @@
     "name": "Dispute Resolution & Arbitration",
     "shortDesc": "Litigation, arbitration, mediation and settlement negotiation to protect business interests.",
     "detail": "Civil and criminal litigation, arbitration and mediation, recovery proceedings including Section 138 matters, settlement negotiations, and police-complaint and FIR assistance, always weighed against what protects the business.",
-    "image": "https://images.unsplash.com/photo-1758518729685-f88df7890776?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1758518729685-f88df7890776?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "arbitration-vs-litigation-timing",
     "iconSvg": "<path d=\"M12 2v20M5 8l-3 5a3 3 0 0 0 6 0zM19 8l-3 5a3 3 0 0 0 6 0zM5 8h14M8 4h8\"/>"
   },
@@ -94,16 +94,16 @@
     "name": "Due Diligence",
     "shortDesc": "Transaction, property and counterparty diligence with clear, decision-ready reporting.",
     "detail": "Document, litigation and regulatory-compliance review; intellectual-property and employment/labour review; environmental due diligence; risk assessment reporting for transactions, property and counterparties.",
-    "image": "https://images.unsplash.com/photo-1626148749358-5b3b3f45b41a?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "",
-    "iconSvg": "<path d=\"M9 12l2 2 4-4\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/>"
+    "iconSvg": "<path d=\"M4 20V5a2 2 0 0 1 2-2h8l4 4v3\"/><path d=\"M14 3v5h5\"/><circle cx=\"15\" cy=\"16\" r=\"4\"/><path d=\"M18 19l3 3\"/>"
   },
   {
     "id": "ipr",
     "name": "Intellectual Property Rights",
     "shortDesc": "Trademark, copyright and patent registration, portfolio management and infringement action.",
     "detail": "Trademark, patent and copyright searches, filing and prosecution; enforcement and infringement litigation; trade-secret protection; IP portfolio management, audits, licensing strategy and anti-counterfeiting action.",
-    "image": "https://images.unsplash.com/photo-1603901622056-0a5bee231395?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1603901622056-0a5bee231395?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "trademark-renewal-timelines",
     "iconSvg": "<path d=\"M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.6 1 1.5 1 2.5h6c0-1 .4-1.9 1-2.5A6 6 0 0 0 12 2z\"/>"
   },
@@ -112,7 +112,7 @@
     "name": "Real Estate & Property Matters",
     "shortDesc": "Property transactions, title diligence, leasing and real estate dispute resolution.",
     "detail": "Purchase, sale and lease agreements; title searches and due diligence; development and construction agreements (JV, BBA, ATS); landlord-tenant matters; real estate litigation, mediation and arbitration; regulatory compliance and registration.",
-    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "",
     "iconSvg": "<path d=\"M3 11l9-8 9 8\"/><path d=\"M5 10v10h14V10\"/><path d=\"M9 20v-6h6v6\"/>"
   },
@@ -121,18 +121,18 @@
     "name": "Private Client & Family Matters",
     "shortDesc": "Wills, family and matrimonial matters, and personalised advisory for individuals.",
     "detail": "Wills, trusts and estate planning; family law including divorce, custody and matrimonial disputes; personal real estate and property matters; individual dispute resolution and litigation support; reputation and defamation matters.",
-    "image": "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "",
-    "iconSvg": "<circle cx=\"8\" cy=\"7\" r=\"3\"/><circle cx=\"16\" cy=\"7\" r=\"3\"/><path d=\"M2 21c0-4 2.7-6.5 6-6.5s6 2.5 6 6.5M10 21c0-4 2.7-6.5 6-6.5s6 2.5 6 6.5\"/>"
+    "iconSvg": "<path d=\"M3 10.5 12 4l9 6.5\"/><path d=\"M5 10v10h14V10\"/><circle cx=\"9.5\" cy=\"14\" r=\"1.6\"/><circle cx=\"14.5\" cy=\"14\" r=\"1.6\"/><path d=\"M6.8 19c0-1.7 1.2-2.8 2.7-2.8s2.7 1.1 2.7 2.8M11.8 19c0-1.7 1.2-2.8 2.7-2.8s2.7 1.1 2.7 2.8\"/>"
   },
   {
     "id": "legal-opinions",
     "name": "Legal Opinions",
     "shortDesc": "Considered legal opinions to support complex or high-stakes business decisions: often where the other areas begin.",
     "detail": "Considered, written legal opinions to support high-stakes business decisions, board resolutions and transaction sign-off, drawing on the other fourteen practice areas as the matter requires.",
-    "image": "https://images.unsplash.com/photo-1780171865622-f6391f2f7397?w=1200&q=75&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1780171865622-f6391f2f7397?w=800&q=65&auto=format&fit=crop",
     "relatedInsight": "",
     "wide": true,
-    "iconSvg": "<path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/>"
+    "iconSvg": "<path d=\"M5 20V5a2 2 0 0 1 2-2h7l4 4v6\"/><path d=\"M14 3v5h5\"/><path d=\"M8 8h3M8 12h6\"/><circle cx=\"16\" cy=\"18\" r=\"3\"/><path d=\"M16 21v2l-1.5-1L13 23\"/>"
   }
 ]

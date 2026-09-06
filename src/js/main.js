@@ -287,24 +287,6 @@
     });
   });
 
-  /* ---------- Entry disclaimer (Bar Council of India Rule 36) ---------- */
-  var modal = document.querySelector(".disclaimer-modal");
-  if(modal){
-    var KEY = "vidhicorp_disclaimer_ack";
-    var accepted = false;
-    try { accepted = sessionStorage.getItem(KEY) === "1"; } catch(err){}
-    if(!accepted){
-      setTimeout(function(){ modal.classList.add("is-open"); }, 400);
-    }
-    var acceptBtn = modal.querySelector("[data-accept]");
-    if(acceptBtn){
-      acceptBtn.addEventListener("click", function(){
-        modal.classList.remove("is-open");
-        try { sessionStorage.setItem(KEY, "1"); } catch(err){}
-      });
-    }
-  }
-
   /* ---------- Back to top ---------- */
   var toTopBtn = document.querySelector(".to-top");
   if(toTopBtn){

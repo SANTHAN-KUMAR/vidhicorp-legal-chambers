@@ -69,7 +69,7 @@
   --dur-slow:600ms;
 
   /* ---- Structure ---- */
-  --container:1280px;
+  --container:1440px;
   --container-narrow:820px;
   --radius-s:3px;
   --radius-m:6px;
@@ -189,13 +189,14 @@ section{position:relative}
   height:76px;background:rgba(5,11,26,.94);backdrop-filter:blur(10px) saturate(140%);
   box-shadow:0 1px 0 rgba(247,242,232,.08);
 }
-.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:32px}
+.site-header .container{width:100%;display:flex;align-items:center;justify-content:space-between;gap:32px}
 .brand{display:flex;align-items:center;gap:12px;color:var(--paper-50)}
 .brand svg{width:40px;height:40px;flex:none}
 .brand-mark{width:44px;height:44px;flex:none;object-fit:contain;border-radius:6px}
-.brand-word{font-family:var(--font-display);font-weight:500;font-size:19px;letter-spacing:.02em;line-height:1.1}
+.brand > span{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.brand-word{display:block;font-family:var(--font-display);font-weight:500;font-size:19px;letter-spacing:.02em;line-height:1.1;white-space:nowrap}
 .brand-word b{font-weight:600}
-.brand-sub{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-300);margin-top:3px;font-weight:500}
+.brand-sub{display:block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-300);margin-top:3px;font-weight:500;line-height:1.1;white-space:nowrap}
 
 .nav-primary{display:flex;align-items:center;gap:22px}
 .nav-links{display:flex;align-items:center;gap:20px}
@@ -320,8 +321,11 @@ html.save-data .hero-media .poster-fallback{display:block}
   margin-top:auto;margin-bottom:auto;margin-right:auto;
   margin-left:max(48px, calc((100% - var(--container)) / 2 + 48px));
 }
+/* Gutters mirror .container exactly so the hero text sits on the same left
+   edge as the header logo at every width. */
 @media(max-width:1100px){.hero-content{margin-left:32px}}
-@media(max-width:760px){.hero-content{margin-top:96px;margin-bottom:0;margin-left:20px}}
+@media(max-width:760px){.hero-content{margin-top:96px;margin-bottom:0}}
+@media(max-width:640px){.hero-content{margin-left:20px}}
 
 /* Floating trust badge — fills the quiet right side of the hero with a live credential */
 .hero-badge{
@@ -781,7 +785,25 @@ blockquote.quote{
   padding:11px 20px;border:1px solid var(--border);border-radius:999px;font-size:13.5px;font-weight:500;color:var(--text-muted);
   transition:border-color var(--dur) var(--ease),color var(--dur) var(--ease);
 }
+.sector-chip{display:inline-block;text-decoration:none}
 .sector-chip:hover{border-color:var(--accent-strong);color:var(--accent-strong)}
+
+/* Sector cards — sectors presented with the same substance as practice areas */
+/* Grid lines are drawn per-card, so a partly filled last row leaves clean
+   empty space rather than exposed gap colour. */
+.sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-m);overflow:hidden}
+.sector-card{background:var(--bg);box-shadow:0 0 0 1px var(--border);padding:30px 28px 26px;display:flex;flex-direction:column;scroll-margin-top:110px;transition:background var(--dur) var(--ease)}
+.sector-card:hover{background:var(--bg-alt)}
+.sector-card h3{font-family:var(--font-display);font-size:17.5px;font-weight:500;line-height:1.3;margin:0 0 12px}
+.sector-card p{font-size:14px;line-height:1.72;color:var(--text-muted);margin:0 0 18px}
+.sector-card-link{
+  margin-top:auto;display:inline-flex;align-items:center;gap:7px;
+  font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--accent-strong);text-decoration:none;
+}
+.sector-card-link svg{width:14px;height:14px;transition:transform var(--dur) var(--ease)}
+.sector-card-link:hover svg{transform:translateX(3px)}
+@media (max-width:1024px){.sector-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.sector-grid{grid-template-columns:1fr}.sector-card{padding:26px 22px 22px}}
 
 /* Clients grid */
 .client-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -853,23 +875,6 @@ blockquote.quote{
 .whatsapp-float svg{width:28px;height:28px;fill:#fff}
 @media(max-width:600px){.whatsapp-float{right:16px;bottom:16px;width:50px;height:50px}.whatsapp-float svg{width:25px;height:25px}}
 
-/* Entry disclaimer modal */
-.disclaimer-modal{
-  position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;padding:24px;
-  background:rgba(11,15,22,.82);backdrop-filter:blur(6px);
-  opacity:0;visibility:hidden;transition:opacity var(--dur) var(--ease),visibility 0s var(--dur);
-}
-.disclaimer-modal.is-open{opacity:1;visibility:visible;transition:opacity var(--dur) var(--ease)}
-.disclaimer-box{
-  background:var(--paper-50);max-width:560px;width:100%;min-width:0;padding:48px;border-radius:var(--radius-m);
-  transform:translateY(16px);transition:transform var(--dur) var(--ease-out);border-top:3px solid var(--accent);
-}
-@media(max-width:480px){.disclaimer-box{padding:32px 24px}}
-.disclaimer-modal.is-open .disclaimer-box{transform:translateY(0)}
-.disclaimer-box h3{font-size:22px;margin-bottom:16px}
-.disclaimer-box p{font-size:14.5px;line-height:1.75;color:var(--text-muted);margin-bottom:14px}
-.disclaimer-box .btn{margin-top:12px;width:100%}
-
 /* Back to top */
 .to-top{
   position:fixed;right:28px;bottom:94px;z-index:150;width:48px;height:48px;border-radius:50%;
@@ -880,3 +885,72 @@ blockquote.quote{
 @media(max-width:600px){.to-top{right:16px;bottom:82px}}
 .to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
 .to-top svg{width:16px;height:16px}
+
+/* ---------- Bar Council of India entry disclaimer gate ---------- */
+html.bci-gate-open, html.bci-gate-open body { overflow: hidden; }
+.bci-gate {
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  background: rgba(0, 4, 30, .82);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.bci-gate[hidden] { display: none; }
+.bci-gate-panel {
+  width: 100%; max-width: 640px; max-height: calc(100vh - 48px);
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
+  background: var(--paper-50, #f7f2e8); color: var(--text, #1a1a1a);
+  border-radius: var(--radius-m, 6px);
+  padding: 40px 40px 32px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+  text-align: left;
+}
+.bci-gate-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+.bci-gate-brand img { width: 44px; height: 44px; object-fit: contain; }
+.bci-gate-brand .brand-word { display: block; font-family: var(--font-display); font-size: 19px; letter-spacing: .01em; }
+.bci-gate-brand .brand-sub { display: block; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); }
+.bci-gate h2 {
+  font-family: var(--font-display); font-size: 22px; line-height: 1.3;
+  font-weight: 500; margin: 0 0 18px;
+}
+.bci-gate-body p { font-size: 14.5px; line-height: 1.75; color: var(--text-muted); margin: 0 0 14px; }
+.bci-gate-btn { width: 100%; margin-top: 10px; justify-content: center; text-transform: uppercase; letter-spacing: .1em; }
+.bci-gate-foot { margin: 16px 0 0; font-size: 12.5px; line-height: 1.7; color: var(--text-muted); text-align: center; }
+.bci-gate-foot a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 560px) {
+  .bci-gate { padding: 14px; }
+  .bci-gate-panel { padding: 28px 22px 24px; max-height: calc(100vh - 28px); }
+  .bci-gate h2 { font-size: 19px; }
+  .bci-gate-body p { font-size: 13.5px; }
+}
+
+/* ---------- Newsletter (light variant, for pages ending in a dark CTA band) ---------- */
+.newsletter-light{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.newsletter-inner{max-width:640px;margin:0 auto;text-align:center}
+.newsletter-inner .eyebrow{justify-content:center}
+.newsletter-inner h2{margin:0 0 14px}
+.newsletter-sub{font-size:14.5px;line-height:1.75;color:var(--text-muted);margin:0 auto 26px;max-width:58ch}
+.newsletter-form{margin:0 auto}
+.newsletter-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.newsletter-row input[type=email]{
+  flex:1 1 280px;max-width:320px;height:54px;padding:0 20px;font-size:15px;font-family:inherit;
+  border:1px solid var(--border);border-radius:var(--radius-s);background:var(--bg);color:var(--text);
+}
+.newsletter-row input[type=email]:focus{outline:2px solid var(--accent-strong);outline-offset:1px;border-color:var(--accent-strong)}
+.newsletter-light .form-status{text-align:center;margin-top:12px;font-size:14px}
+@media (max-width:560px){.newsletter-row input[type=email]{max-width:100%}.newsletter-row .btn{width:100%;justify-content:center}}
+
+/* ---------- Remaining practice areas (home page) ---------- */
+.pa-rest{margin-top:40px;padding-top:34px;border-top:1px solid var(--border)}
+.pa-rest-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin:0 0 18px}
+.pa-rest-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px 32px}
+.pa-rest-list a{
+  display:block;font-size:14.5px;line-height:1.5;color:var(--text);text-decoration:none;
+  padding:8px 0;border-bottom:1px solid transparent;transition:color var(--dur) var(--ease),border-color var(--dur) var(--ease);
+}
+.pa-rest-list a:hover{color:var(--accent-strong);border-bottom-color:var(--accent-strong)}
+.pa-rest-cta{margin-top:30px;display:inline-flex;align-items:center;gap:9px}
+.pa-rest-cta svg{width:15px;height:15px;transition:transform var(--dur) var(--ease)}
+.pa-rest-cta:hover svg{transform:translateX(3px)}
+@media (max-width:860px){.pa-rest-list{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.pa-rest-list{grid-template-columns:1fr}}

@@ -5,7 +5,7 @@ description: "VidhiCorp Legal Chambers' 15 practice areas spanning corporate & c
 permalink: /practice-areas/
 ---
 <section class="page-hero has-photo grain">
-  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1400&q=55&auto=format&fit=crop" alt="" width="1400" height="933" loading="eager" fetchpriority="high" decoding="async"></div>
   <div class="container">
     <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; Practice Areas</p>
     <h1>Practice areas</h1>
@@ -69,8 +69,18 @@ permalink: /practice-areas/
         <p>Practice areas describe what we do. The sectors below describe the businesses and industries we understand — often as important to a good outcome as the law itself.</p>
       </div>
     </div>
-    <div class="sector-strip reveal">
-      {% for s in sectors %}<span class="sector-chip">{{ s }}</span>{% endfor %}
+    <div class="sector-grid reveal-stagger">
+      {% for s in sectors %}
+      <article class="sector-card" id="{{ s.id }}">
+        <h3>{{ s.name }}</h3>
+        <p>{{ s.desc }}</p>
+        {% for pa in practiceAreas %}{% if pa.id == s.related %}
+        <a class="sector-card-link" href="#{{ pa.id }}">Related practice: {{ pa.name }}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        {% endif %}{% endfor %}
+      </article>
+      {% endfor %}
     </div>
   </div>
 </section>

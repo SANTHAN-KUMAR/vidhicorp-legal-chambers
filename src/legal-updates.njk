@@ -6,7 +6,7 @@ permalink: /legal-updates/
 eleventyExcludeFromCollections: true
 ---
 <section class="page-hero has-photo grain">
-  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1631972756622-b2d9164c0e53?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1631972756622-b2d9164c0e53?w=1400&q=55&auto=format&fit=crop" alt="" width="1400" height="933" loading="eager" fetchpriority="high" decoding="async"></div>
   <div class="container">
     <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; Legal Updates</p>
     <h1>Legal Updates</h1>
@@ -20,7 +20,7 @@ eleventyExcludeFromCollections: true
     <div class="insight-grid reveal">
       {% for update in collections.legalUpdates %}
       <a class="insight-card" href="{{ update.url }}">
-        <div class="insight-img"><img src="{{ update.data.image }}" alt="{{ update.data.title }}" loading="lazy"><span class="insight-tag">{{ update.data.tag }}</span></div>
+        <div class="insight-img"><img src="{{ update.data.image | imgSize(800, 65) }}" alt="{{ update.data.title }}" width="800" height="500" loading="lazy" decoding="async"><span class="insight-tag">{{ update.data.tag }}</span></div>
         <div class="insight-body">
           <h3>{{ update.data.title }}</h3>
           <div class="meta"><span>{{ update.data.date | dateDisplay }}</span></div>

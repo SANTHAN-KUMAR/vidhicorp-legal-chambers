@@ -5,7 +5,7 @@ description: "Select clientele and client testimonials for VidhiCorp Legal Chamb
 permalink: /clients/
 ---
 <section class="page-hero has-photo grain">
-  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1400&q=55&auto=format&fit=crop" alt="" width="1400" height="933" loading="eager" fetchpriority="high" decoding="async"></div>
   <div class="container">
     <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; Clients</p>
     <h1>Clients &amp; testimonials.</h1>
@@ -25,7 +25,7 @@ permalink: /clients/
     <div class="client-grid reveal-stagger">
       {% for c in clients %}
       <div class="client-card">
-        {% if c.logo %}<img src="{{ c.logo }}" alt="{{ c.name }} logo" style="max-height:40px;max-width:160px;margin-bottom:14px;display:block">{% else %}<span class="pill">{{ c.sector }}</span>{% endif %}
+        {% if c.logo %}<img src="{{ c.logo }}" alt="{{ c.name }} logo" width="160" height="40" loading="lazy" decoding="async" style="max-height:40px;max-width:160px;width:auto;height:auto;margin-bottom:14px;display:block">{% else %}<span class="pill">{{ c.sector }}</span>{% endif %}
         <h3>{{ c.name }}</h3>
         <p>{{ c.desc }}</p>
       </div>

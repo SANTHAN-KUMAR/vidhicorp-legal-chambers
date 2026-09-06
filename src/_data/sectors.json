@@ -1,15 +1,80 @@
 [
-  "Real Estate & Infrastructure",
-  "Manufacturing",
-  "Retail & Consumer Businesses",
-  "Technology & IT Services",
-  "Hospitality & Leisure",
-  "Start-ups & Emerging Businesses",
-  "Investment & Holding Companies",
-  "Metals & Recycling",
-  "FMCG",
-  "Consumer Durables",
-  "Media & Entertainment",
-  "Banking & Finance",
-  "Private Clients"
+  {
+    "id": "real-estate-infrastructure",
+    "name": "Real Estate & Infrastructure",
+    "desc": "Developers, landowners and investors across plotted, residential, commercial and township projects — from title diligence and joint development agreements to RERA compliance, allottee disputes and possession-stage litigation.",
+    "related": "real-estate"
+  },
+  {
+    "id": "manufacturing",
+    "name": "Manufacturing",
+    "desc": "Plants and production businesses where legal risk sits in the supply chain, the workforce and the licence file: vendor and EPC contracts, land and environmental approvals, factory and labour compliance, and union matters.",
+    "related": "employment"
+  },
+  {
+    "id": "fmcg",
+    "name": "FMCG",
+    "desc": "Fast-moving consumer goods businesses working through distributor and channel networks — distribution and stockist agreements, trade terms, packaging and labelling compliance, brand protection and consumer complaints.",
+    "related": "contracts-agreements"
+  },
+  {
+    "id": "consumer-durables",
+    "name": "Consumer Durables",
+    "desc": "Appliance and durables companies managing dealer networks, warranty and after-sales obligations, product liability exposure, service-franchise arrangements and cross-border sourcing.",
+    "related": "corporate-commercial"
+  },
+  {
+    "id": "retail-consumer",
+    "name": "Retail & Consumer Businesses",
+    "desc": "Store and online retail operations — commercial leases and leave-and-licence arrangements, franchise agreements, consumer protection and e-commerce rules, payment terms and vendor onboarding.",
+    "related": "contracts-agreements"
+  },
+  {
+    "id": "technology-it",
+    "name": "Technology & IT Services",
+    "desc": "Software, SaaS and IT services companies whose contracts carry the commercial risk: master service agreements, SLAs, licensing and IP assignment, data protection obligations and offshore delivery arrangements.",
+    "related": "ipr"
+  },
+  {
+    "id": "banking-finance",
+    "name": "Banking & Finance",
+    "desc": "Lenders, NBFCs and borrowers on facility and security documentation, regulatory compliance and reporting, recovery and enforcement, debt restructuring and insolvency, and fintech and data-protection questions.",
+    "related": "funding-investments"
+  },
+  {
+    "id": "media-entertainment",
+    "name": "Media & Entertainment",
+    "desc": "Film, television, music, publishing and digital media — talent and production agreements, distribution and licensing, copyright registration and enforcement, content and advertising compliance, and rights acquisition.",
+    "related": "ipr"
+  },
+  {
+    "id": "startups-emerging",
+    "name": "Start-ups & Emerging Businesses",
+    "desc": "Founders building the legal foundation as they go: entity structuring and founders' agreements, ESOP pools, term sheets and investment documentation, IP ownership, and the compliance calendar that arrives with funding.",
+    "related": "funding-investments"
+  },
+  {
+    "id": "hospitality-leisure",
+    "name": "Hospitality & Leisure",
+    "desc": "Hotels, resorts and leisure operators on management and operating agreements, property and licensing arrangements, statutory permits, employment structures and guest-facing liability.",
+    "related": "corporate-commercial"
+  },
+  {
+    "id": "investment-holding",
+    "name": "Investment & Holding Companies",
+    "desc": "Holding structures and family investment vehicles — group restructuring, intra-group agreements, shareholder arrangements, FDI and exchange-control questions, and governance across subsidiaries.",
+    "related": "transactions-advisory"
+  },
+  {
+    "id": "metals-recycling",
+    "name": "Metals & Recycling",
+    "desc": "Metal processing, extraction and recycling businesses operating under a dense permit regime: environmental and pollution-control compliance, trading and offtake contracts, land use and regulatory investigations.",
+    "related": "regulatory-compliance"
+  },
+  {
+    "id": "private-clients",
+    "name": "Private Clients",
+    "desc": "Individuals and families on matters that are personal before they are legal — matrimonial and custody disputes, succession, wills and estate planning, property transactions and disputes, and private advisory handled with discretion.",
+    "related": "private-client"
+  }
 ]
