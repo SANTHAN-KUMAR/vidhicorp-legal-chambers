@@ -12,16 +12,38 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy({ "src/CNAME_TEMPLATE.txt": "CNAME_TEMPLATE.txt" });
 
-  eleventyConfig.addFilter("dateDisplay", (isoDate) => {
-    if (!isoDate) return "";
-    const d = new Date(isoDate + "T00:00:00");
-    return d.toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" });
+  // YAML parses an unquoted `date: 2026-09-01` into a Date object, while a
+  // quoted one stays a string. Normalise both to a Date before formatting —
+  // concatenating "T00:00:00" onto a Date produced "Invalid Date" everywhere.
+  const toDate = (value) => {
+    if (!value) return null;
+    if (value instanceof Date) return isNaN(value) ? null : value;
+    if (typeof value === "string") {
+      const d = new Date(/^\d{4}-\d{2}-\d{2}$/.test(value) ? value + "T00:00:00" : value);
+      return isNaN(d) ? null : d;
+    }
+    const d = new Date(value);
+    return isNaN(d) ? null : d;
+  };
+
+  eleventyConfig.addFilter("dateDisplay", (value) => {
+    const d = toDate(value);
+    return d ? d.toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric", timeZone: "Asia/Kolkata" }) : "";
   });
 
-  eleventyConfig.addFilter("rssDate", (isoDate) => {
-    if (!isoDate) return "";
-    const d = new Date(isoDate + "T00:00:00+05:30");
-    return d.toUTCString().replace("GMT", "+0000");
+  eleventyConfig.addFilter("rssDate", (value) => {
+    const d = toDate(value);
+    return d ? d.toUTCString() : "";
+  });
+
+  eleventyConfig.addFilter("monthYear", (value) => {
+    const d = toDate(value);
+    return d ? d.toLocaleDateString("en-IN", { year: "numeric", month: "short", timeZone: "Asia/Kolkata" }) : "";
+  });
+
+  eleventyConfig.addFilter("isoDate", (value) => {
+    const d = toDate(value);
+    return d ? d.toISOString().slice(0, 10) : "";
   });
 
   // Re-request remote images at the size they are actually displayed.
@@ -40,12 +62,6 @@ module.exports = function (eleventyConfig) {
     } catch (e) {
       return url;
     }
-  });
-
-  eleventyConfig.addFilter("monthYear", (isoDate) => {
-    if (!isoDate) return "";
-    const d = new Date(isoDate + "T00:00:00");
-    return d.toLocaleDateString("en-IN", { year: "numeric", month: "short" });
   });
 
   eleventyConfig.addCollection("legalInsights", (api) =>
