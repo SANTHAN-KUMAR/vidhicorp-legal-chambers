@@ -1,0 +1,86 @@
+---
+layout: base.njk
+title: "Our Team | VidhiCorp Legal Chambers"
+description: "Meet the founder and partners of VidhiCorp Legal Chambers — corporate legal counsel and family law advocates serving Gurugram, Delhi NCR and businesses across India."
+permalink: /team/
+---
+<section class="page-hero has-photo grain">
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1524230572899-a752b3835840?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; Team</p>
+    <h1>Counsel, not headcount.</h1>
+    <p>The chambers stays structured around depth rather than scale, so every matter reaches a partner directly.</p>
+  </div>
+</section>
+
+<!-- Founder -->
+<section class="section">
+  <div class="container">
+    <div class="two-col reveal">
+      <div class="reveal portrait-panel">
+        <img src="{{ team.founder.portrait }}" alt="{{ team.founder.displayName }}, Founder and Managing Partner">
+      </div>
+      <div>
+        <p class="eyebrow">Founder &amp; Managing Partner</p>
+        <h2>{{ team.founder.displayName }}</h2>
+        <p class="mt-24" style="color:var(--text-muted);font-size:17px;line-height:1.75">{{ team.founder.shortBio }}</p>
+        <p class="mt-16" style="color:var(--text-muted);font-size:17px;line-height:1.75">A University topper in Psychology from Banaras Hindu University, with a law degree from the Campus Law Centre, University of Delhi.</p>
+
+        <div class="mt-32">
+          <p style="font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin-bottom:10px">Courts &amp; tribunals</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            {% for c in team.founder.courts %}<span class="sector-chip">{{ c }}</span>{% endfor %}
+          </div>
+        </div>
+        <div class="mt-32" style="display:flex;flex-wrap:wrap;gap:10px">
+          {% for a in team.founder.awards %}<span class="pill">{{ a }}</span>{% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col reveal mt-48" style="margin-top:96px">
+      <div class="reveal" style="order:2">
+        <p class="eyebrow">Co-Founder &amp; Partner</p>
+        <h2>{{ team.coFounder.displayName }}</h2>
+        <p class="mt-24" style="color:var(--text-muted);font-size:17px;line-height:1.75">{{ team.coFounder.aboutBio }}</p>
+      </div>
+      <div class="reveal portrait-panel" style="order:1">
+        <img src="{{ team.coFounder.portrait }}" alt="{{ team.coFounder.displayName }}, Co-Founder and Partner">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chambers structure -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">How the chambers is organised</p>
+        <h2>Every matter is led by a partner.</h2>
+        <p>The chambers is structured in tiers of experience so that a matter always has senior oversight, while day-to-day execution is resourced efficiently.</p>
+      </div>
+    </div>
+    <div class="pa-grid pa-grid-4 reveal-stagger">
+      {% for tier in team.structure %}
+      <div class="pa-card" data-bg="{{ tier.image }}">
+        <span class="pa-card-img" aria-hidden="true"></span><span class="pa-card-scrim" aria-hidden="true"></span>
+        <div class="pa-card-body">
+          <h3 style="font-size:16.5px">{{ tier.tier }}</h3>
+          <div class="pa-card-more"><p>{{ tier.desc }}</p></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band grain">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center">Join the chambers</p>
+    <h2>We are always glad to hear from counsel who share our approach.</h2>
+    <div class="btn-row">
+      <a href="/careers/" class="btn btn-primary">View Openings</a>
+    </div>
+  </div>
+</section>

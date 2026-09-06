@@ -1,0 +1,28 @@
+{
+  "founder": {
+    "name": "Jankee Ballabh Pandey",
+    "displayName": "Mr. Jankee Ballabh Pandey",
+    "title": "Founder & Managing Partner",
+    "portrait": "/images/jankee-portrait.jpg",
+    "shortBio": "Twenty years across courtroom practice and in-house counsel roles, most recently as Head of Legal & Integrity Officer at Atotech, a European multinational, with earlier roles at Unilever, Whirlpool and Trident.",
+    "aboutBio": "With more than two decades of exemplary experience in corporate and commercial law, Mr. Jankee Ballabh Pandey has cultivated a profound expertise in corporate governance, dispute resolution, mergers and acquisitions, and commercial contracts. His extensive background, acquired through leading major projects for international corporations, has equipped him with a comprehensive understanding of various business sectors. He has provided counsel to the management of large multinational companies on a wide array of legal matters, including commercial disputes, cross-border transactions, business restructuring, creation of new business divisions, expansion of manufacturing facilities, greenfield projects, environmental concerns, land acquisition, sale and purchase of real estate, international compliance, the implications of new legislation on business, safeguarding of intellectual property rights, corporate strategy, corporate social responsibility, and the initiation of new projects, among others. He has practised extensively before numerous courts and tribunals in Delhi, including the District Court, the Central Administrative Tribunal, the Delhi High Court and the Supreme Court of India, on both the civil and criminal side. His leadership in these domains has been acknowledged through prestigious accolades, including \"Best Leading Lawyers 2022\" and \"Top 10 General Counsel 2022.\"",
+    "education": ["University topper in Psychology, Banaras Hindu University", "Law degree, Campus Law Centre, Faculty of Law, University of Delhi"],
+    "courts": ["District Court, Delhi", "Central Administrative Tribunal", "Delhi High Court", "Supreme Court of India"],
+    "awards": ["Best Leading Lawyers 2022", "Top 10 General Counsel 2022"],
+    "linkedin": "https://in.linkedin.com/in/jankeeballabhpandey"
+  },
+  "coFounder": {
+    "name": "Sanjulata Pandey",
+    "displayName": "Ms. Sanjulata Pandey",
+    "title": "Co-Founder & Partner",
+    "portrait": "/images/sanjulata-portrait.jpg",
+    "aboutBio": "Sanjulata Pandey is Co-Founder and Partner at VidhiCorp Legal Chambers, where her practice is centred on the individual rather than only the institution. She advises and counsels clients directly on family and personal legal matters, including matrimonial disputes, custody and related domestic and private concerns, bringing to each matter the same discretion and attentiveness the chambers extends to its corporate clients. Her approach combines careful interviewing and counselling with sound legal advisory, so that individuals navigating difficult personal circumstances receive guidance that is both legally precise and genuinely considerate of what they are going through. Her work rounds out the chambers' practice, extending the same standard of care from the boardroom to the individuals and families the firm is trusted to advise."
+  },
+  "structure": [
+    { "tier": "Partners", "desc": "Own client relationships and matter strategy start to finish. Every engagement letter names a partner directly accountable to you.", "image": "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=700&q=70&auto=format&fit=crop" },
+    { "tier": "Counsels", "desc": "Practising advocates with rich and outstanding experience in courtroom practice, litigation and arbitration, engaged where a matter calls for dedicated advocacy.", "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&q=70&auto=format&fit=crop" },
+    { "tier": "Senior Associates", "desc": "Lead drafting, diligence and procedural work under partner supervision, and act as your day-to-day point of contact.", "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=700&q=70&auto=format&fit=crop" },
+    { "tier": "Associates", "desc": "Research, documentation and filings, keeping matters moving without unnecessary billing overhead.", "image": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=700&q=70&auto=format&fit=crop" },
+    { "tier": "Associate Network", "desc": "Independent counsel and advocates across other Indian cities, engaged where a matter needs local presence.", "image": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=700&q=70&auto=format&fit=crop" }
+  ]
+}

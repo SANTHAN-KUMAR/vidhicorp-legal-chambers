@@ -1,0 +1,133 @@
+---
+layout: base.njk
+title: "POSH Internal Committee Compliance Checker (India)"
+description: "Free self-assessment: check whether your organisation's POSH Internal Committee and processes actually meet the requirements of the POSH Act, 2013 — not just the policy document."
+permalink: /tools/posh-compliance-checklist/
+pageSchema:
+  "@context": "https://schema.org"
+  "@type": "WebApplication"
+  name: "POSH Internal Committee Compliance Checker"
+  applicationCategory: "BusinessApplication"
+  operatingSystem: "Any (web browser)"
+  offers:
+    "@type": "Offer"
+    price: "0"
+    priceCurrency: "INR"
+  description: "Free self-assessment checklist against the POSH Act, 2013 requirements for a validly constituted and operating Internal Committee."
+  url: "https://www.vidhicorplegal.com/tools/posh-compliance-checklist/"
+---
+<section class="page-hero has-photo grain">
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/resources/">Resources</a> &nbsp;/&nbsp; Tools</p>
+    <h1 style="max-width:22ch">POSH Internal Committee compliance checker</h1>
+    <p>Nine questions against the POSH Act, 2013's actual requirements — not just whether a policy document exists.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container article-body">
+
+    <p>Check each item that is genuinely true for your organisation right now, not what was true when the policy was first adopted. The result is a quick self-assessment, not a compliance certificate.</p>
+
+    <div class="tool-panel">
+      <div id="posh-checklist">
+        <div class="checklist-item">
+          <input type="checkbox" id="p1" data-weight="1">
+          <label for="p1">Our organisation has 10 or more employees and has constituted an Internal Committee (IC).<span class="checklist-hint">Below 10 employees, complaints route to the government-constituted Local Committee instead.</span></label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="p2" data-weight="1">
+          <label for="p2">The IC's Presiding Officer is a senior woman employee.</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="p3" data-weight="1">
+          <label for="p3">The IC has at least two internal members committed to the cause of women or with relevant experience.</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="p4" data-weight="1.5">
+          <label for="p4">The IC has an external member from an NGO or association familiar with sexual harassment issues.<span class="checklist-hint">The most commonly missed requirement — an IC without this member is not validly constituted.</span></label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="p5" data-weight="1">
+          <label for="p5">No IC member's three-year term has lapsed without reconstitution.</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="p6" data-weight="1">
+          <label for="p6">Our most recent annual report was actually filed with the District Officer.<span class="checklist-hint">Separate from any board-report POSH disclosure under the Companies Act.</span></label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="p7" data-weight="1">
+          <label for="p7">General POSH awareness training was conducted for the existing workforce in the last 12 months — not only at onboarding.</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="p8" data-weight="0.75">
+          <label for="p8">IC members themselves have been trained on inquiry procedure, timelines and confidentiality obligations.</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="p9" data-weight="0.75">
+          <label for="p9">Our policy document reflects the IC's actual, current composition — not a stale version from an earlier year.</label>
+        </div>
+      </div>
+
+      <div id="posh-score" class="checklist-score" style="display:none">
+        <b id="posh-score-num">0/9</b>
+        <span id="posh-score-text"></span>
+      </div>
+    </div>
+
+    <h2>Why each of these matters</h2>
+    <p>These nine points map directly onto the operational requirements of the POSH Act, 2013 that sit behind the policy document most organisations already have — inquiry timelines (90 days to inquire, 10 days to report, 60 days for the employer to act), the external member requirement, reconstitution before terms lapse, and ongoing rather than one-time training. Read the full context in <a href="/legal-insights/posh-compliance-beyond-the-policy/">POSH compliance beyond the policy document</a>.</p>
+
+    <p class="mt-32" style="font-size:13px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:24px">This tool is a self-assessment aid only and does not constitute legal advice, an audit, or a compliance certification. A "compliant" result here does not confirm actual legal compliance for your organisation. For a formal POSH compliance review, <a href="/contact/">contact the chambers</a>.</p>
+  </div>
+</section>
+
+<section class="cta-band grain">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center">Gaps in your checklist?</p>
+    <h2>We set up, reconstitute and externally staff Internal Committees for organisations of every size.</h2>
+    <div class="btn-row">
+      <a href="/contact/" class="btn btn-primary">Set Up or Review Your ICC</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  "use strict";
+  var checklist = document.getElementById("posh-checklist");
+  if(!checklist) return;
+  var boxes = checklist.querySelectorAll('input[type=checkbox]');
+  var scoreWrap = document.getElementById("posh-score");
+  var scoreNum = document.getElementById("posh-score-num");
+  var scoreText = document.getElementById("posh-score-text");
+
+  function update(){
+    var total = 0, earned = 0, checkedCount = 0;
+    boxes.forEach(function(b){
+      var w = parseFloat(b.getAttribute("data-weight")) || 1;
+      total += w;
+      if(b.checked){ earned += w; checkedCount++; }
+    });
+    var pct = total ? (earned/total)*100 : 0;
+    scoreNum.textContent = checkedCount + "/" + boxes.length;
+    scoreWrap.style.display = "flex";
+    if(pct >= 95){
+      scoreWrap.style.background = "rgba(47,107,79,.12)";
+      scoreNum.style.color = "var(--success)";
+      scoreText.textContent = "Your Internal Committee looks fully aligned with the Act's core requirements. Keep the annual report and training cadence current.";
+    } else if(pct >= 60){
+      scoreWrap.style.background = "var(--bg-alt)";
+      scoreNum.style.color = "var(--accent-strong)";
+      scoreText.textContent = "Broadly on track, with real gaps. Check the unticked items above — several (like the external member and reconstitution) go to whether the IC is validly constituted at all.";
+    } else {
+      scoreWrap.style.background = "rgba(163,42,34,.1)";
+      scoreNum.style.color = "var(--error)";
+      scoreText.textContent = "Significant gaps against the Act's requirements. Worth a formal review before this is tested by an actual complaint.";
+    }
+  }
+
+  boxes.forEach(function(b){ b.addEventListener("change", update); });
+})();
+</script>

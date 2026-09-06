@@ -1,0 +1,61 @@
+---
+layout: base.njk
+title: "Resources | Free Tools, Forms & Guides for Businesses"
+description: "Free tools, standard forms, guides and checklists from VidhiCorp Legal Chambers to help business owners and corporate legal counsel assess their position and plan next steps."
+permalink: /resources/
+---
+<section class="page-hero has-photo grain">
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; Resources</p>
+    <h1>Resources</h1>
+    <p>Tools to help you in business and make informed decisions. Our free calculators are designed to assist you in understanding the numbers, assessing your position and planning your next step.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Free tools</p>
+        <h2>Calculators &amp; checklists.</h2>
+      </div>
+    </div>
+    <div class="pa-grid reveal" style="grid-template-columns:repeat({{ tools.length }},1fr)">
+      {% for tool in tools %}
+      <a class="pa-card" href="{{ tool.url }}" data-bg="{{ tool.image }}">
+        <span class="pa-card-img" aria-hidden="true"></span><span class="pa-card-scrim" aria-hidden="true"></span>
+        <div class="pa-card-body">
+          <svg class="pa-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">{{ tool.iconSvg | safe }}</svg>
+          <h3>{{ tool.title }}</h3>
+          <div class="pa-card-more"><p>{{ tool.desc }}</p></div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="mt-24" style="font-size:13.5px;color:var(--text-muted)">More tools are added regularly — including a Stamp Duty Calculator, Tax Calculator and further compliance checklists.</p>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Standard forms</p>
+        <h2>Start a conversation with the chambers.</h2>
+      </div>
+    </div>
+    <div class="rows reveal-stagger">
+      <div class="row-item" style="grid-template-columns:1fr 1.4fr">
+        <h4 style="font-size:18px">General Enquiry</h4>
+        <p>For a first conversation about a new matter. <a href="/contact/#main" style="color:var(--accent-strong)">Use the enquiry form &rarr;</a></p>
+      </div>
+      <div class="row-item" style="grid-template-columns:1fr 1.4fr;border-bottom:1px solid var(--border)">
+        <h4 style="font-size:18px">New Matter Intake</h4>
+        <p>For existing or ready-to-engage clients formally opening a matter. <a href="/contact/#main" style="color:var(--accent-strong)">Use the intake form &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "newsletter.njk" %}

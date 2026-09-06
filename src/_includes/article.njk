@@ -1,0 +1,43 @@
+---
+layout: base.njk
+---
+<section class="page-hero has-photo grain">
+  <div class="ph-photo"><img src="{{ image }}" alt="" loading="eager"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="{{ sectionUrl }}">{{ sectionLabel }}</a> &nbsp;/&nbsp; {{ tag }}</p>
+    <h1 style="max-width:24ch">{{ title }}</h1>
+    <p>{{ description }}</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container article-body">
+    <div class="article-meta">
+      <span class="pill">{{ tag }}</span>
+      <span style="font-size:13px;color:var(--text-muted)">{{ date | monthYear }} &middot; {{ readTime }}</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:24px">By <a href="/team/" style="color:var(--accent-strong)">{{ author or "Jankee Ballabh Pandey" }}</a>, Founder &amp; Managing Partner, VidhiCorp Legal Chambers</p>
+    {{ content | safe }}
+    <p class="mt-32" style="font-size:13px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:24px">This article is general information only and does not constitute legal advice. No advocate-client relationship is created by reading it. For advice on a specific matter, <a href="/contact/">contact the chambers directly</a>.</p>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Related</p>
+        <h2>More from {{ sectionLabel }}</h2>
+      </div>
+      <a href="{{ sectionUrl }}" class="btn btn-outline sec-link">All {{ sectionLabel }}</a>
+    </div>
+    <div class="insight-grid reveal">
+      {% for item in relatedItems %}
+      <a class="insight-card" href="{{ item.url }}">
+        <div class="insight-img"><img src="{{ item.data.image }}" alt="" loading="lazy"><span class="insight-tag">{{ item.data.tag }}</span></div>
+        <div class="insight-body"><h3>{{ item.data.title }}</h3></div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

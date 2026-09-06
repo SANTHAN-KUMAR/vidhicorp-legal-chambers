@@ -1,0 +1,23 @@
+---
+permalink: /legal-insights/feed.xml
+eleventyExcludeFromCollections: true
+---<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Legal Insights — VidhiCorp Legal Chambers</title>
+  <link>{{ site.domain }}/legal-insights/</link>
+  <atom:link href="{{ site.domain }}/legal-insights/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Practical legal writing from VidhiCorp Legal Chambers on corporate, commercial, IP, regulatory and dispute resolution topics for Indian businesses.</description>
+  <language>en-in</language>
+{% for article in collections.legalInsights %}
+  <item>
+    <title>{{ article.data.title }}</title>
+    <link>{{ site.domain }}{{ article.url }}</link>
+    <guid>{{ site.domain }}{{ article.url }}</guid>
+    <pubDate>{{ article.data.date | rssDate }}</pubDate>
+    <category>{{ article.data.tag }}</category>
+    <description>{{ article.data.description }}</description>
+  </item>
+{% endfor %}
+</channel>
+</rss>

@@ -1,0 +1,135 @@
+---
+layout: base.njk
+title: "ESOP Pool Dilution Calculator (India)"
+description: "Free calculator: estimate how a pre-money ESOP pool top-up dilutes founders vs investors in an Indian priced funding round. Illustrative only — not a substitute for cap table modelling by counsel."
+permalink: /tools/esop-dilution-calculator/
+pageSchema:
+  "@context": "https://schema.org"
+  "@type": "WebApplication"
+  name: "ESOP Pool Dilution Calculator"
+  applicationCategory: "BusinessApplication"
+  operatingSystem: "Any (web browser)"
+  offers:
+    "@type": "Offer"
+    price: "0"
+    priceCurrency: "INR"
+  description: "Free calculator estimating founder and investor dilution from an ESOP pool top-up in an Indian priced funding round."
+  url: "https://www.vidhicorplegal.com/tools/esop-dilution-calculator/"
+---
+<section class="page-hero has-photo grain">
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=75&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/resources/">Resources</a> &nbsp;/&nbsp; Tools</p>
+    <h1 style="max-width:20ch">ESOP pool dilution calculator</h1>
+    <p>See how a pre-money option pool top-up splits dilution between founders and incoming investors, before the term sheet does the deciding for you.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container article-body">
+
+    <p>Investors in Indian priced funding rounds routinely ask for the ESOP pool to be topped up as part of the round — and for that top-up to be created <em>pre-money</em>, meaning existing shareholders (largely founders) absorb the dilution, not the incoming investor. This calculator shows the arithmetic behind that ask, using the standard formula for a pre-money pool shuffle.</p>
+
+    <div class="tool-panel">
+      <div class="form-grid">
+        <div class="field">
+          <label for="esop-invest">New investment amount (₹)</label>
+          <input type="number" id="esop-invest" inputmode="decimal" placeholder="e.g. 20000000" min="0">
+        </div>
+        <div class="field">
+          <label for="esop-premoney">Headline pre-money valuation (₹)</label>
+          <input type="number" id="esop-premoney" inputmode="decimal" placeholder="e.g. 80000000" min="0">
+        </div>
+        <div class="field">
+          <label for="esop-existing-pool">Existing ESOP pool already allocated (%)</label>
+          <input type="number" id="esop-existing-pool" inputmode="decimal" placeholder="e.g. 5" min="0" max="100" step="0.1">
+        </div>
+        <div class="field">
+          <label for="esop-target-pool">Target ESOP pool post-round (%)</label>
+          <input type="number" id="esop-target-pool" inputmode="decimal" placeholder="e.g. 12" min="0" max="100" step="0.1">
+        </div>
+      </div>
+      <button type="button" id="esop-calc-btn" class="btn btn-primary mt-24">Calculate Dilution</button>
+
+      <div id="esop-result" class="tool-result">
+        <p class="eyebrow" style="color:var(--brass-300)">Estimated post-round cap table</p>
+        <div class="tool-result-grid">
+          <div class="tool-result-stat"><b id="esop-out-investor">—</b><span>Investor ownership</span></div>
+          <div class="tool-result-stat"><b id="esop-out-pool">—</b><span>ESOP pool (post-round)</span></div>
+          <div class="tool-result-stat"><b id="esop-out-founders">—</b><span>Founders &amp; existing shareholders</span></div>
+          <div class="tool-result-stat"><b id="esop-out-postmoney">—</b><span>Post-money valuation</span></div>
+        </div>
+        <p class="tool-note" id="esop-out-explain"></p>
+      </div>
+    </div>
+
+    <h2>How this calculation works</h2>
+    <p>When an option pool top-up is created <em>pre-money</em>, the target pool percentage and the investor's percentage are both carved out of the post-money cap table first — and whatever is left belongs to founders and existing shareholders. In formula terms: Investor % = Investment &divide; (Pre-money + Investment); Founders' resulting % = 100% &minus; Target Pool % &minus; Investor %. The "extra" dilution founders absorb, beyond the investment itself, is the gap between the target pool and the pool that already existed before the round.</p>
+
+    <h2>Why this matters at term sheet stage, not after</h2>
+    <p>The pool size and whether it is created pre-money or post-money is a negotiated term, not a fixed rule. Founders who understand this arithmetic before a term sheet arrives are in a materially better position to negotiate a smaller top-up, a later top-up, or a post-money mechanic — than founders discovering the effect for the first time in the definitive documents. Read the full context in <a href="/legal-insights/esop-pool-sizing-for-startups/">ESOP pool sizing: what to decide before you need it</a>.</p>
+
+    <p class="mt-32" style="font-size:13px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:24px">This calculator is an illustrative estimate using a simplified, standard pre-money pool-shuffle formula. It does not account for multiple share classes, liquidation preferences, convertible instruments already on the cap table, rounding conventions, or deal-specific mechanics — and does not constitute legal or financial advice. For an actual cap table model for your round, <a href="/contact/">talk to the chambers</a>.</p>
+  </div>
+</section>
+
+<section class="cta-band grain">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center">Raising a round?</p>
+    <h2>Get your ESOP scheme and cap table structured properly before term sheet stage.</h2>
+    <div class="btn-row">
+      <a href="/contact/" class="btn btn-primary">Talk to Us About Your Round</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  "use strict";
+  var btn = document.getElementById("esop-calc-btn");
+  if(!btn) return;
+  var fmtPct = function(n){ return n.toFixed(1) + "%"; };
+  var fmtINR = function(n){
+    if(n >= 10000000) return "₹" + (n/10000000).toFixed(2) + " Cr";
+    if(n >= 100000) return "₹" + (n/100000).toFixed(2) + " L";
+    return "₹" + n.toLocaleString("en-IN");
+  };
+  btn.addEventListener("click", function(){
+    var invest = parseFloat(document.getElementById("esop-invest").value);
+    var premoney = parseFloat(document.getElementById("esop-premoney").value);
+    var existingPool = parseFloat(document.getElementById("esop-existing-pool").value);
+    var targetPool = parseFloat(document.getElementById("esop-target-pool").value);
+
+    var result = document.getElementById("esop-result");
+    var explain = document.getElementById("esop-out-explain");
+
+    if(!(invest > 0) || !(premoney > 0) || isNaN(existingPool) || isNaN(targetPool) || targetPool < 0 || targetPool > 99){
+      result.classList.add("is-visible");
+      document.getElementById("esop-out-investor").textContent = "—";
+      document.getElementById("esop-out-pool").textContent = "—";
+      document.getElementById("esop-out-founders").textContent = "—";
+      document.getElementById("esop-out-postmoney").textContent = "—";
+      explain.textContent = "Enter a positive investment amount, a positive pre-money valuation, and a target pool between 0% and 99% to see a result.";
+      return;
+    }
+
+    var postMoney = premoney + invest;
+    var investorPct = (invest / postMoney) * 100;
+    var founderPct = 100 - targetPool - investorPct;
+    var extraDilution = targetPool - existingPool;
+
+    document.getElementById("esop-out-investor").textContent = fmtPct(investorPct);
+    document.getElementById("esop-out-pool").textContent = fmtPct(targetPool);
+    document.getElementById("esop-out-founders").textContent = fmtPct(Math.max(founderPct, 0));
+    document.getElementById("esop-out-postmoney").textContent = fmtINR(postMoney);
+
+    if(founderPct < 0){
+      explain.textContent = "The target pool plus the investor's percentage exceed 100% — this combination isn't mathematically possible. Re-check your inputs.";
+    } else {
+      explain.textContent = "Founders and existing shareholders absorb the pool top-up on top of the investment dilution: the pool grew from " + fmtPct(existingPool) + " to " + fmtPct(targetPool) + " (" + (extraDilution >= 0 ? "+" : "") + fmtPct(extraDilution) + "), all of which comes out of the pre-money side of the table under a pre-money pool shuffle.";
+    }
+
+    result.classList.add("is-visible");
+  });
+})();
+</script>

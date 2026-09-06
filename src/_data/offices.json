@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Gurugram (Head Office)",
+    "isHeadOffice": true,
+    "addressLines": ["I-001, Maple Crescent", "C-Block, Sushant Lok 1, Sector 43", "Gurugram, Haryana 122009"],
+    "city": "Gurugram",
+    "region": "Haryana",
+    "postalCode": "122009",
+    "country": "IN",
+    "mapQuery": "Maple Crescent, Sushant Lok 1, Sector 43, Gurugram, Haryana 122009",
+    "geo": { "latitude": 28.4549, "longitude": 77.0859 }
+  }
+]

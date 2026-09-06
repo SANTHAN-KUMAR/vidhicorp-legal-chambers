@@ -1,0 +1,25 @@
+{
+  "name": "vidhicorp-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SANTHAN-KUMAR/vidhicorp-legal-chambers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SANTHAN-KUMAR/vidhicorp-legal-chambers/issues"
+  },
+  "homepage": "https://github.com/SANTHAN-KUMAR/vidhicorp-legal-chambers#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

@@ -1,0 +1,163 @@
+---
+layout: base.njk
+title: "About the Firm | VidhiCorp Legal Chambers"
+description: "VidhiCorp Legal Chambers is a full-service legal practice in Gurugram, serving Delhi NCR, Mumbai and businesses across India, built on two decades of combined partner experience in corporate law, contracts, IP and dispute resolution."
+permalink: /about/
+---
+<section class="page-hero has-photo grain">
+  <div class="ph-photo"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1920&q=75&auto=format&fit=crop" alt="VidhiCorp Legal Chambers office in Gurugram" loading="eager"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; About</p>
+    <h1>Strategic legal partner for businesses.</h1>
+    <p>Twenty years of multi-jurisdictional experience in corporate law, M&amp;A, compliance, employment law and dispute resolution, brought together under one chambers serving Gurugram, Delhi NCR, Mumbai and businesses across India.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <p class="eyebrow">Our story</p>
+        <h2>Counsel that has sat on both sides of the table.</h2>
+        <p class="mt-24" style="color:var(--text-muted);font-size:18px;line-height:1.75">{{ team.founder.aboutBio }}</p>
+        <p class="mt-16" style="color:var(--text-muted);font-size:18px;line-height:1.75">That dual view — having sat inside the business as in-house counsel, and outside it as courtroom advocate — shapes every engagement at VidhiCorp Legal Chambers: advice weighed against what the business can actually absorb, not just what the law permits.</p>
+        <p class="mt-24" style="font-family:var(--font-display);font-style:italic;font-size:19px;color:var(--text)">Mission: deliver precise, commercially grounded counsel with the discretion our clients are entitled to expect.</p>
+      </div>
+      <div class="reveal photo-panel">
+        <img src="https://images.unsplash.com/photo-1524230572899-a752b3835840?w=1000&q=75&auto=format&fit=crop" alt="">
+        <div class="photo-caption">
+          <p class="eyebrow" style="color:var(--brass-300)">Vision</p>
+          <p style="font-family:var(--font-display);font-size:20px;line-height:1.5;font-weight:400;color:var(--paper-50)">To be the counsel businesses turn to before decisions are made — helping them anticipate challenges, seize opportunities and move forward with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">In the media</p>
+        <h2>Recognition &amp; press.</h2>
+      </div>
+    </div>
+    <div class="rows reveal-stagger">
+      <div class="row-item" style="grid-template-columns:220px 1fr">
+        <h4 style="font-size:17px">CEO Insights India</h4>
+        <p>{{ team.founder.displayName }} featured on handling legal and compliance challenges with extensive know-how of the law and its amendments. <a href="https://www.ceoinsightsindia.com/leader/jankee-ballabh-pandey-handling-legal-and-compliance-challenges-with-extensive-know-how-about-law-and-its-amendments-cid-4392.html" target="_blank" rel="noopener" style="color:var(--accent-strong)">Read the interview &rarr;</a></p>
+      </div>
+      <div class="row-item" style="grid-template-columns:220px 1fr;border-bottom:1px solid var(--border)">
+        <h4 style="font-size:17px">Awards</h4>
+        <p>{{ team.founder.awards | join(", and ") }}.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stat-band bg-alt">
+  <div class="container" style="display:contents">
+    <div class="stat-item"><b data-count="20" data-suffix="+">0</b><span>Years, multi-jurisdictional experience</span></div>
+    <div class="stat-item"><b>₹1,200+ Cr</b><span>Disputes &amp; arbitration handled</span></div>
+    <div class="stat-item"><b>USD 600M</b><span>Cross-border dispute support</span></div>
+    <div class="stat-item"><b data-count="{{ practiceAreas.length }}">0</b><span>Practice areas</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Our way of working</p>
+        <h2>Three pillars, nine working values.</h2>
+        <p>The framework the chambers is run on: from personal standards, to how the team works together, to what the firm is ultimately here to achieve.</p>
+      </div>
+    </div>
+    <div class="pillar-grid reveal-stagger">
+      <div class="pillar-col">
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8-5.1-4.7 6.9-.8z"/></svg>
+        <h3>Personal Excellence</h3>
+        <ul class="pillar-values">
+          <li>Outstanding Service</li>
+          <li>Commitment</li>
+          <li>Integrity</li>
+        </ul>
+      </div>
+      <div class="pillar-col">
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2.5 20c0-3.6 2.9-6 5.5-6s5.5 2.4 5.5 6M14.5 14.5c2.3.2 4.5 2 4.5 5.5"/></svg>
+        <h3>Working Together</h3>
+        <ul class="pillar-values">
+          <li>Shared Learning</li>
+          <li>Collaboration</li>
+          <li>Communication</li>
+        </ul>
+      </div>
+      <div class="pillar-col">
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+        <h3>Achieving Our Mission</h3>
+        <ul class="pillar-values">
+          <li>Innovative Practice</li>
+          <li>Vision</li>
+          <li>Ownership</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">How a matter moves</p>
+        <h2>From the First Meeting to the Final Report</h2>
+        <p>A clear, consistent process designed to keep every matter moving with purpose, clarity and attention to detail.</p>
+      </div>
+    </div>
+    <div class="pa-grid pa-grid-4 reveal-stagger">
+      <div class="pa-card" data-bg="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&q=70&auto=format&fit=crop">
+        <span class="pa-card-img" aria-hidden="true"></span><span class="pa-card-scrim" aria-hidden="true"></span>
+        <div class="pa-card-body">
+          <span class="step-badge">01</span>
+          <h3>Understand</h3>
+          <div class="pa-card-more"><p>We begin by understanding the matter, the objectives and what success looks like.</p></div>
+        </div>
+      </div>
+      <div class="pa-card" data-bg="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=700&q=70&auto=format&fit=crop">
+        <span class="pa-card-img" aria-hidden="true"></span><span class="pa-card-scrim" aria-hidden="true"></span>
+        <div class="pa-card-body">
+          <span class="step-badge">02</span>
+          <h3>Advise</h3>
+          <div class="pa-card-more"><p>We provide clear, practical advice focused on the decisions that matter.</p></div>
+        </div>
+      </div>
+      <div class="pa-card" data-bg="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=70&auto=format&fit=crop">
+        <span class="pa-card-img" aria-hidden="true"></span><span class="pa-card-scrim" aria-hidden="true"></span>
+        <div class="pa-card-body">
+          <span class="step-badge">03</span>
+          <h3>Investigate</h3>
+          <div class="pa-card-more"><p>We examine the facts, documents and issues thoroughly to build a sound foundation.</p></div>
+        </div>
+      </div>
+      <div class="pa-card" data-bg="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=70&auto=format&fit=crop">
+        <span class="pa-card-img" aria-hidden="true"></span><span class="pa-card-scrim" aria-hidden="true"></span>
+        <div class="pa-card-body">
+          <span class="step-badge">04</span>
+          <h3>Deliver</h3>
+          <div class="pa-card-more"><p>We keep you informed throughout, incorporate feedback at every stage, and bring each matter to a clear and complete conclusion — with a final report and defined next steps.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band grain">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center">Speak to the firm</p>
+    <h2>Ready to discuss a matter with counsel who will ask about the business first?</h2>
+    <div class="btn-row">
+      <a href="/contact/" class="btn btn-primary">Discuss Your Matter</a>
+      <a href="/team/" class="btn btn-ghost">Meet the Team</a>
+    </div>
+  </div>
+</section>
