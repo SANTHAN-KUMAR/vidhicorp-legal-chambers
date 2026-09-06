@@ -1,13 +1,22 @@
-This is NOT an active CNAME file — it's a placeholder note.
+This is NOT an active config file — it's a placeholder note.
 
-When ready to point www.vidhicorplegal.com at GitHub Pages:
-1. Create a file named exactly "CNAME" (no extension) at the repo root (or in src/, so
-   it's copied to _site/CNAME during build) containing exactly: www.vidhicorplegal.com
-2. Add the corresponding DNS records at your domain registrar (a CNAME record for
-   "www" pointing to santhan-kumar.github.io, plus the standard GitHub Pages A/ALIAS
-   records for the apex domain if you also want vidhicorplegal.com without "www" to work).
-3. In the repo's Settings -> Pages, enter the custom domain and enable "Enforce HTTPS"
-   once DNS has propagated.
+Hosting moved from GitHub Pages to Netlify (required for Decap CMS's git-gateway
+login to work — GitHub Pages has no equivalent). The repo itself stays on GitHub;
+Netlify just builds and serves from it. This file is a reminder of the domain
+cutover steps, not something Eleventy or Netlify reads.
 
-Do this only when DNS is actually ready — adding a live CNAME file before that can
-break the current *.github.io URL.
+When ready to point www.vidhicorplegal.com at the Netlify site:
+1. In the Netlify site dashboard: Domain management -> Add a domain ->
+   www.vidhicorplegal.com (and the apex vidhicorplegal.com if you want both).
+2. Add the DNS records Netlify shows you at your domain registrar — typically a
+   CNAME for "www" pointing to the Netlify subdomain (e.g. your-site.netlify.app),
+   plus Netlify's ALIAS/A records for the apex domain.
+3. Once DNS propagates, Netlify auto-provisions the HTTPS certificate — no
+   manual step needed there (unlike GitHub Pages).
+4. Set the old GitHub Pages custom domain (if one was configured) back to none,
+   or leave the repo's Pages source disabled, so the two hosts don't fight over
+   the same domain.
+
+Do this only when DNS is actually ready — pointing the domain before the Netlify
+site exists or before Identity/Git Gateway are enabled can break the current live
+URL and lock out CMS login.
